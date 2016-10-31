@@ -5,7 +5,7 @@
 [Trello link][trello]
 
 [heroku]: http://www.herokuapp.com
-[trello]: https://trello.com
+[trello]: https://trello.com/b/ELTsC2u0/openbistro
 
 ## Minimum Viable Product
 
@@ -30,11 +30,11 @@ sufficient CSS styling:
 * [DB schema][schema]
 * [Sample State][sample-state]
 
-[wireframes]: docs/wireframes
-[components]: docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+[wireframes]: ../docs/wireframes
+[components]: ../docs/component-hierarchy.md
+[sample-state]: ../docs/sample-state.md
+[api-endpoints]: ../docs/api-endpoints.md
+[schema]: ../docs/schema.md
 
 ## Implementation Timeline
 
@@ -73,11 +73,14 @@ buttons.
 * Add rating and number of reviews to restaurant index page.
 * Add full review details to restaurant details page.
 
-### Phase 6: - Pagination / Infinite scroll for Restaurant Index (1 day)
+### Phase 6: - User Page with Reviews and Reservations (1.5 day)
 
-**Objective:** Add pagination or infinite scroll to restaurant index.
+**Objective:** User has access to a profile page.
+* Profile page contains upcoming reservations.
+* Profile page contains posted reviews.
 
 ### Bonus Features (TBD)
 - [ ] City highlights other than restaurants
+- [ ] Pagination or infinite scroll
 - [ ] Point system for bookings and site usage
 - [ ] Request user for review after reservation date has passed

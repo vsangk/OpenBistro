@@ -11,6 +11,7 @@
 
 **RestaurantIndexContainer**
 - RestaurantIndex
+  - RestaurantIndexItem
 
 **RestaurantDetailContainer**
 - Reservations

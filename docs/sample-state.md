@@ -36,22 +36,22 @@
       zip_code: "94105",
       description: "Waterbar is a seafood-centric restaurant located on the waterfront with spectacular panoramic views of the bay and city skyline",
       detail_image_urls: []
-    }
-  }
-  reservations: {
-    1: {
-      party_size: 2,
-      time_slot: "2016-11-15 18:00:00"
-      user_id: 1,
-      restaurant_id: 1
-    }
-  },
-  reviews: {
-    1: {
-      rating: 5,
-      body: "Excellent!",
-      user_id: 1,
-      restaurant_id: 1
+      reservations: {
+        1: {
+          party_size: 2,
+          time_slot: "2016-11-15 18:00:00"
+          user_id: 1,
+          restaurant_id: 1
+        }
+      }
+      reviews: {
+        1: {
+          rating: 5,
+          body: "Excellent!",
+          user_id: 1,
+          restaurant_id: 1
+        }
+      }
     }
   }
 }
