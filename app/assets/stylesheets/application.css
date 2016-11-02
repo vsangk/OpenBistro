@@ -13,3 +13,68 @@
  *= require_tree .
  *= require_self
  */
+
+/* CSS Reset */
+
+ html, head, body, header, nav, h1, a, ul, li, main,
+ section, p, footer, small {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   outline: 0;
+   font: inherit;
+   color: inherit;
+   text-align: inherit;
+   text-decoration: inherit;
+   vertical-align: inherit;
+   box-sizing: inherit;
+   background: transparent;
+ }
+
+ header, nav, main, section,footer, small {
+   display: block;
+ }
+
+ ul {
+   list-style: none;
+ }
+
+ /* Clearfix */
+
+ .group:after {
+   content: "";
+   display: block;
+   clear: both;
+ }
+
+
+ body {
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 400;
+  background: #eee;
+}
+
+/* Header and Navbar*/
+
+.header {
+  background: #2c3e50;
+  color: #fff;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 36px;
+  padding: 10px;
+}
+
+.header-nav {
+  margin: 16px;
+  padding: 4px;
+}
+
+.header-nav > a {
+  padding: 10px;
+}

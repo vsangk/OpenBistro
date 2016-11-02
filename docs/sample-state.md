@@ -13,7 +13,8 @@
   cities: {
     1: {
       name: "San Francisco",
-      image_url: "http://hoteldiva.com/sites/default/files/HD-home-2.jpg"
+      image_url: "http://hoteldiva.com/sites/default/files/HD-home-2.jpg",
+      num_of_restaurants: 16
     }
   },
   restaurants: {
