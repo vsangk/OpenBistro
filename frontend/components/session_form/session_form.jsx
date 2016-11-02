@@ -15,15 +15,30 @@ class SessionForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
+  update(field) {
+    return e => {
+      this.setState({ [field]: e.target.value });
+    };
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     let user = this.state;
     this.props.processForm({user});
   }
 
-  update(field) {
-    return e => {
-      this.setState({ [field]: e.target.value });
+  handleGuestSignIn() {
+    let user = {
+      username: 'guest',
+      password: 'password'
+    };
+    this.props.login({user});
+  }
+
+  componentDidMount() {
+    this.state = {
+      username: '',
+      password: ''
     };
   }
 
@@ -37,19 +52,11 @@ class SessionForm extends React.Component {
     }
   }
 
-  handleGuestSignIn() {
-    let user = {
-      username: 'guest',
-      password: 'password'
-    };
-    this.props.login({user});
-  }
-
   renderErrors() {
     return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+      <ul className="auth-form-errors">
+        {this.props.errors.map((error, idx) => (
+          <li key={idx}>
             {error}
           </li>
         ))}

@@ -4,7 +4,7 @@
 
 [Trello link][trello]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: https://openbistro.herokuapp.com/
 [trello]: https://trello.com/b/ELTsC2u0/openbistro
 
 ## Minimum Viable Product

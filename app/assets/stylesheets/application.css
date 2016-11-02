@@ -49,7 +49,8 @@
 
 
  body {
-  font-family: 'Roboto';
+  /*font-family: 'Roboto';*/
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 16px;
   font-weight: 400;
   background: #eee;
@@ -67,6 +68,7 @@
 
 .logo {
   font-size: 36px;
+  font-weight: 600;
   padding: 10px;
 }
 
@@ -77,4 +79,15 @@
 
 .header-nav > a {
   padding: 10px;
+}
+
+.home-bg-image {
+  background-image: url(http://res.cloudinary.com/openbistro/image/upload/c_scale,w_1558/v1478113887/root-splash_es6ddq.jpg);
+  height: 300px;
+  background-size: cover;
+}
+
+.home-bg-image h1 {
+  color: white;
+  font-size: 36px;
 }

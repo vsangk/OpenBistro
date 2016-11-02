@@ -56,8 +56,18 @@
     text-transform: uppercase;
 }
 
-.auth-form button { margin-bottom: 15px; }
+.auth-form button {
+  margin-bottom: 15px;
+}
+
 .auth-form-prompt a {
   text-decoration: underline;
   color: blue;
+}
+
+.auth-form-errors {
+  padding-bottom: 5px;
+}
+.auth-form-errors li {
+  color: red;
 }
