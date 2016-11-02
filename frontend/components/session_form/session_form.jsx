@@ -12,6 +12,7 @@ class SessionForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleGuestSignIn = this.handleGuestSignIn.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   handleSubmit(e) {
@@ -44,6 +45,18 @@ class SessionForm extends React.Component {
     this.props.login({user});
   }
 
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
     let headerText, promptText, linkText, url;
     if (this.props.formType === 'login') {
@@ -61,6 +74,7 @@ class SessionForm extends React.Component {
     return (
       <div className="auth-form">
         <h2>{headerText}</h2>
+        {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
           <input type="text"
             placeholder="Username"
