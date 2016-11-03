@@ -7,5 +7,5 @@ export const receiveAllCities = cities => ({
 });
 
 export const requestAllCities = () => ({
-  type: RECEIVE_ALL_CITIES
+  type: REQUEST_ALL_CITIES
 });
