@@ -9,11 +9,11 @@
 guest_login = User.create(username: "guest", password: "password")
 test_login = User.create(username: "vince", password: "password")
 
-City.create(name: "San Francisco", image_url: "media.otstatic.com/img/metros/us-san-francisco-aa3420f9bb8f33c79df53521f413756d.jpg")
-City.create(name: "New York Area", image_url: "media.otstatic.com/img/metros/us-new-york-city-9537c56f295fe358cee957581f1c3f78.jpg")
-City.create(name: "Los Angeles", image_url: "media.otstatic.com/img/metros/us-los-angeles-8f2f00f7aa446546f977b53e26c16029.jpg")
-City.create(name: "Miami", image_url: "media.otstatic.com/img/metros/us-miami-fd879bb9ac0e7e21aad607f6e03e529d.jpg")
-City.create(name: "Las Vegas", image_url: "media.otstatic.com/img/metros/us-las-vegas-c52ae0ec450fe61b46886daa2e06f284.jpg")
-City.create(name: "Chicago", image_url: "media.otstatic.com/img/metros/us-chicago-3db15f197bbdb319ee7de67241189d66.jpg")
+City.create(name: "San Francisco", image_url: "http://res.cloudinary.com/openbistro/image/upload/v1478134303/city-sf_fheb0c.jpg")
+City.create(name: "New York Area", image_url: "http://res.cloudinary.com/openbistro/image/upload/v1478134301/city-ny_idkoqf.jpg")
+City.create(name: "Los Angeles", image_url: "http://res.cloudinary.com/openbistro/image/upload/v1478134299/city-mia_luyl0g.jpg")
+City.create(name: "Miami", image_url: "http://res.cloudinary.com/openbistro/image/upload/v1478134295/city-lv_vjzscn.jpg")
+City.create(name: "Las Vegas", image_url: "http://res.cloudinary.com/openbistro/image/upload/v1478134291/city-la_urfser.jpg")
+City.create(name: "Chicago", image_url: "http://res.cloudinary.com/openbistro/image/upload/v1478134289/city-chi_d7stvz.jpg")
 
 Restaurant.create(name: "Waterbar", image_url: "http://resizer.otstatic.com/v2/photos/large/23367687.jpg", category: "Seafood", price: 3, address: "399 The Embarcadero South", state: "CA", zip_code: "94105", city_id: 1, description: "Waterbar is a seafood-centric restaurant located on the waterfront with spectacular panoramic views of the bay and city skyline")

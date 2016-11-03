@@ -35,11 +35,14 @@ class SessionForm extends React.Component {
     this.props.login({user});
   }
 
-  componentDidMount() {
-    this.state = {
-      username: '',
-      password: ''
-    };
+  componentWillReceiveProps(nextProps) {
+    // this.setState({
+    //   username: '',
+    //   password: ''
+    // });
+    if (this.props.errors.length !== 0) {
+      this.props.clearErrors();
+    }
   }
 
   componentDidUpdate() {
@@ -85,10 +88,12 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <input type="text"
             placeholder="Username"
+            value={this.state.username}
             onChange={this.update('username')}/><br/>
 
           <input type="password"
             placeholder="Password"
+            value={this.state.password}
             onChange={this.update('password')}/><br/>
 
           <input type="submit" value={headerText} />&nbsp;

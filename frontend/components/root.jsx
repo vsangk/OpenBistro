@@ -5,6 +5,7 @@ import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
 import SessionFormContainer from './session_form/session_form_container';
 import HeaderContainer from './header/header_container';
 import HomeContainer from './home/home_container';
+import clearErrors from  '../actions/session_actions';
 
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
