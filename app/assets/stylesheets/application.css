@@ -61,20 +61,21 @@
 .header {
   background: #2c3e50;
   color: #fff;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #000;
   display: flex;
   justify-content: space-between;
 }
 
 .logo {
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 600;
-  padding: 10px;
+  padding: 12px;
+  margin-left: 10px;
 }
 
 .header-nav {
   margin: 16px;
-  padding: 4px;
+  padding: 6px;
 }
 
 .header-nav > a {
@@ -90,4 +91,7 @@
 .home-bg-image h1 {
   color: white;
   font-size: 36px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  padding-left: 30px;
+  padding-top: 30px;
 }

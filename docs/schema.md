@@ -28,6 +28,7 @@ category          | string    | not null
 description       | string    | not null
 image_url         | string    | not null
 detail_image_urls | string    | default: [], null: false, array: true
+price             | integer   | not null
 city_id           | integer   | not null, foreign key (references cities), indexed
 
 ## reservations

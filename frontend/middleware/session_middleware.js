@@ -7,7 +7,7 @@ import { receiveCurrentUser,
 
 import { login, signUp, logout } from '../util/session_api_util';
 
-export default ({ getState, dispatch }) => next => action => {
+export default ({ dispatch }) => next => action => {
   const successCallback = user => dispatch(receiveCurrentUser(user));
   const errorCallback = errors => dispatch(receiveErrors(errors.responseJSON));
 
