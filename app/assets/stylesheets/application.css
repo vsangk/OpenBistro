@@ -87,7 +87,7 @@
 }
 
 .home-bg-image {
-  background-image: url(http://res.cloudinary.com/openbistro/image/upload/c_scale,w_1540/v1478113887/root-splash_es6ddq.jpg);
+  background-image: url(https://res.cloudinary.com/openbistro/image/upload/c_scale,w_1301/v1478211250/root-splash_es6ddq.jpg);
   height: 400px;
   background-size: cover;
 }
@@ -98,5 +98,5 @@
   font-weight: 600;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   padding-left: 50px;
-  padding-top: 80px;
+  padding-top: 30px;
 }

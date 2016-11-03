@@ -1,3 +1,25 @@
 // Place all the styles related to the api/Cities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.city-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+}
+
+.city-item {
+  width: 300px;
+  height: 150px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 10px;
+
+  h2 {
+    margin-left: 20px;
+    padding-top: 8px;
+  }
+}
