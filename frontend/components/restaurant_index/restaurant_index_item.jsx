@@ -1,14 +1,20 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 
-const RestaurantIndexItem = ({ restaurant }) => (
-  <li>
-    <Link to={`/restaurant/${restaurant.id}`}>
-      {restaurant.name}&nbsp;
-      {restaurant.category}&nbsp;
-      {restaurant.price}&nbsp;
-    </Link>
-  </li>
-);
+const RestaurantIndexItem = ({ restaurant }) => {
+  let restaurantStyle = {backgroundImage: `url(${restaurant.image_url})`};
 
+  return (
+    <div className="restaurant-item">
+      <div style={restaurantStyle} className="restaurant-item-pic" />
+      <div className="restaurant-item-text">
+        <h2>{restaurant.name}</h2>
+        <h3>{restaurant.category}</h3>
+        <h3>{restaurant.price}</h3>
+      </div>
+    </div>
+  );
+};
+
+// <Link to={`/restaurant/${restaurant.id}`}></Link>
 export default RestaurantIndexItem;

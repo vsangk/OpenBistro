@@ -6,7 +6,6 @@ class City extends React.Component {
     this.props.requestAllCities();
   }
 
-
   render() {
     let cityStyle;
 

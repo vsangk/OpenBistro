@@ -1,3 +1,29 @@
 // Place all the styles related to the api/Restaurants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.restaurant-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.restaurant-item {
+  height: 200px;
+  margin: 10px;
+  display: flex;
+}
+
+.restaurant-item-pic {
+  width: 175px;
+  height: 175px;
+  border-radius: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.restaurant-item-text {
+  padding-left: 40px;
+}
