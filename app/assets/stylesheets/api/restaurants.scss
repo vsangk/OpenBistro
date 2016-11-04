@@ -2,18 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.restaurant-container {
+.restaurant-flex-container {
+  display: flex;
+  max-width: 80%;
+}
+
+.restaurant-flex-items {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: center;
-  align-items: flex-start;
+  width: 100%
 }
 
 .restaurant-item {
-  height: 155px;
-  margin: 20px;
   display: flex;
+  height: 155px;
+  margin: 10px;
   border-bottom: solid 1px #ccc;
 }
 

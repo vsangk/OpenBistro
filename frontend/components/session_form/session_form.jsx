@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class SessionForm extends React.Component {
       username: 'guest',
       password: 'password'
     };
-    this.props.login({user});
+    this.props.guestLogin({user});
   }
 
   componentDidUpdate() {

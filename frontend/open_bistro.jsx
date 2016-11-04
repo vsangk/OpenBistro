@@ -4,7 +4,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 // testing
-import { requestAllRestaurants } from './actions/restaurant_actions';
+import { requestRestaurantDetail } from './actions/restaurant_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // testing
   window.store = store;
-  window.requestAllRestaurants = requestAllRestaurants;
+  window.requestRestaurantDetail = requestRestaurantDetail;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store}/>, root);

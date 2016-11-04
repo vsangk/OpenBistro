@@ -6,3 +6,11 @@ export const fetchAllRestaurants = (cityId, success) => {
     success
   });
 };
+
+export const fetchRestaurantDetail = (restaurantId, success) => {
+  $.ajax({
+    type: 'GET',
+    url: `api/restaurants/${restaurantId}`,
+    success
+  });
+};
