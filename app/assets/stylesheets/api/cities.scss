@@ -2,24 +2,42 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.city-container {
+.city-flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.city-flex-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+  max-width: 990px;
+}
+
+.city-header {
+  h2 {
+    font-weight: 400;
+  }
+}
+
+.city-item-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  align-content: center;
 }
 
 .city-item {
-  width: 300px;
-  height: 150px;
-  background-size: contain;
+  width: 330px;
+  height: 155px;
+  background-size: cover;
   background-repeat: no-repeat;
-  margin: 10px;
 
-  h2 {
+  h3 {
     margin-left: 20px;
+    margin-top: 0;
     padding-top: 8px;
   }
 }
