@@ -11,19 +11,22 @@
 }
 
 .restaurant-item {
-  height: 200px;
-  margin: 10px;
+  height: 155px;
+  margin: 20px;
   display: flex;
+  border-bottom: solid 1px #ccc;
 }
 
 .restaurant-item-pic {
   width: 175px;
-  height: 175px;
+  height: 135px;
   border-radius: 10px;
-  background-size: contain;
+  background-size: 175px, 135px;
+  background-position: center;
   background-repeat: no-repeat;
 }
 
 .restaurant-item-text {
   padding-left: 40px;
+  font-size: 14px;
 }

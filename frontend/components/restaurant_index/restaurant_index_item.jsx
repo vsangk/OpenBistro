@@ -10,7 +10,7 @@ const RestaurantIndexItem = ({ restaurant }) => {
       <div className="restaurant-item-text">
         <h2>{restaurant.name}</h2>
         <h3>{restaurant.category}</h3>
-        <h3>{restaurant.price}</h3>
+        <h3>{`$`.repeat(restaurant.price)}</h3>
       </div>
     </div>
   );

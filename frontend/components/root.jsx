@@ -3,13 +3,15 @@ import App from './app';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
 import SessionFormContainer from './session_form/session_form_container';
-import clearErrors from  '../actions/session_actions';
+import { receiveErrors } from  '../actions/session_actions';
 import HeaderContainer from './header/header_container';
 import HomeContainer from './home/home_container';
 import RestaurantIndexContainer from './restaurant_index/restaurant_index_container';
 
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
+    store.dispatch(receiveErrors([]));
+
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
       replace('/');

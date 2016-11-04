@@ -35,16 +35,6 @@ class SessionForm extends React.Component {
     this.props.login({user});
   }
 
-  componentWillReceiveProps(nextProps) {
-    // this.setState({
-    //   username: '',
-    //   password: ''
-    // });
-    if (this.props.errors.length !== 0) {
-      this.props.clearErrors();
-    }
-  }
-
   componentDidUpdate() {
     this.redirectIfLoggedIn();
   }
