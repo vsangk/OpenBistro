@@ -8,8 +8,7 @@ const RestaurantIndexItem = ({ restaurant }) => {
     <div className="restaurant-item">
       <div style={restaurantStyle} className="restaurant-item-pic" />
       <div className="restaurant-item-text">
-        <Link to={`/restaurant/${restaurant.id}`}></Link>
-        <h2>{restaurant.name}</h2>
+        <Link to={`/restaurant/${restaurant.id}`}>{restaurant.name}</Link>
         <h3>{restaurant.category}</h3>
         <h3>{`$`.repeat(restaurant.price)}</h3>
       </div>

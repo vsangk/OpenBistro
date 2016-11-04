@@ -11,11 +11,11 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   let formType = ownProps.location.pathname.slice(1);
   let processForm = formType === 'login' ? login : signUp;
 
-  return {
+  return ({
     processForm: user => dispatch(processForm(user)),
     guestLogin: user => dispatch(login(user)),
     formType
-  };
+  });
 };
 
 export default connect(

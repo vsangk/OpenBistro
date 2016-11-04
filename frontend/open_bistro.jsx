@@ -6,7 +6,6 @@ import configureStore from './store/store';
 // testing
 import { requestRestaurantDetail } from './actions/restaurant_actions';
 
-
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   if (window.currentUser) {
