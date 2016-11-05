@@ -23,6 +23,7 @@
       id: 1
       name: "Waterbar",
       image_url: "http://resizer.otstatic.com/v2/photos/large/23367687.jpg",
+      neighborhood: "Embarcadero",
       category: "Seafood",
       price_range: 3
     }
@@ -37,6 +38,7 @@
     city: "San Francisco",
     state: "CA",
     zip_code: "94105",
+    neighborhood: "Embarcadero",
     description: "Waterbar is a seafood-centric restaurant located on the waterfront with spectacular panoramic views of the bay and city skyline",
     detail_image_urls: []
     reservations: {

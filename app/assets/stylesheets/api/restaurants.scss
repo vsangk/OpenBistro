@@ -4,33 +4,107 @@
 
 .restaurant-flex-container {
   display: flex;
-  max-width: 80%;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .restaurant-flex-items {
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  width: 100%
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  width: 80%;
 }
 
-.restaurant-item {
+.restaurant-index-item {
   display: flex;
   height: 155px;
   margin: 10px;
   border-bottom: solid 1px #ccc;
 }
 
-.restaurant-item-pic {
+.restaurant-index-item-pic {
   width: 175px;
   height: 135px;
   border-radius: 10px;
   background-size: 175px, 135px;
   background-position: center;
   background-repeat: no-repeat;
+  flex-shrink: 0;
 }
 
-.restaurant-item-text {
-  padding-left: 40px;
+.restaurant-index-item-content {
+  flex: 1;
   font-size: 14px;
+  box-sizing: border-box;
+  margin: 0 20px;
+
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 3px 0;
+  }
+}
+
+.riic-title {
+  a {
+    font-size: 26px;
+  }
+}
+
+.riic-time-slots {
+  button {
+    color: #fff;
+    background-color: #4e6780;
+    border-color: #56627b;
+    border-radius: 3px;
+    width: 115px;
+    height: 35px;
+    margin: 15px;
+    cursor: pointer;
+
+  }
+}
+
+.riic-reviews-price {
+  p {
+    display: inline;
+  }
+}
+
+.riic-type-neighborhood {
+  color: #666;
+}
+
+.star-ratings-css {
+  unicode-bidi: bidi-override;
+  color: #c5c5c5;
+  font-size: 16px;
+  height: 16px;
+  width: 80px;
+  margin: -3px auto;
+  position: relative;
+  padding: 0;
+  text-shadow: 0px 1px 0 #a2a2a2;
+
+  &-top {
+    color: #FEAB6C;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  &-bottom {
+    padding: 0;
+    display: block;
+    z-index: 0;
+  }
 }

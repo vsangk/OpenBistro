@@ -59,19 +59,20 @@ buttons.
 * Details will include description and additional photos.
 * Details page will have address and google maps location.
 
-### Phase 4: Reservations (2 day)
+### Phase 4: Reviews (2 days)
+
+**Objective:** Users can leave reviews on restaurant details page.
+* Review form will include a body and 1 through 5 rating.
+* Add rating and number of reviews to restaurant index page.
+* Add full review details to restaurant details page.
+
+### Phase 5: Reservations (2 day)
 
 **Objective:** Users can search for available time slots and book reservations.
 * Reservation form will include number of people, date, and time.
 * Form will be added to the root view and details page.
 * Available time slots will be shown on the details page.
 
-### Phase 5: Reviews (2 days)
-
-**Objective:** Users can leave reviews on restaurant details page.
-* Review form will include a body and 1 through 5 rating.
-* Add rating and number of reviews to restaurant index page.
-* Add full review details to restaurant details page.
 
 ### Phase 6: - User Page with Reviews and Reservations (1.5 day)
 

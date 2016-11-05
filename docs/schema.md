@@ -21,9 +21,10 @@ column name       | data type | details
 id                | integer   | not null, primary key
 name              | string    | not null
 address           | string    | not null
-city              | string    | not null
+city_name         | string    | not null
 state             | string    | not null
 zip_code          | string    | not null
+neighborhood      | string    | not null
 category          | string    | not null
 description       | string    | not null
 image_url         | string    | not null
