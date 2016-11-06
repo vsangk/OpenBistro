@@ -11,7 +11,7 @@ class RestaurantIndex extends React.Component {
       <div className="restaurant-flex-container">
         <div className="restaurant-flex-items">
           <div className="restaurant-index-header">
-            <h2>{this.props.cityName} Restaurants:</h2>
+            <h2>Available Restaurants:</h2>
           </div>
 
           {this.props.restaurants.map( restaurant => (

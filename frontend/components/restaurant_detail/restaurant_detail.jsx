@@ -1,6 +1,7 @@
 import React from 'react';
 import DetailsMap from '../map/map';
 import Review from './review';
+import RestaurantIndexItem from '../restaurant_index/restaurant_index_item';
 
 class RestaurantDetail extends React.Component {
   constructor(props) {
@@ -30,13 +31,13 @@ class RestaurantDetail extends React.Component {
     let restaurantDetailStyle = {
       backgroundImage: `url(${this.props.restaurantDetail.image_url})`
     };
+    // <RestaurantIndexItem restaurant={this.props.restaurant}/>
 
     return (
       <div className="detail-flex-container">
         <div className="detail-header">
           <div className="detail-header-bg">
             <div className="detail-header-content">
-
             </div>
           </div>
         </div>
