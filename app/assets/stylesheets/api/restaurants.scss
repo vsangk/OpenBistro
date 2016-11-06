@@ -67,7 +67,10 @@
     height: 35px;
     margin: 15px;
     cursor: pointer;
+  }
 
+  button:focus {
+    outline: none;
   }
 }
 

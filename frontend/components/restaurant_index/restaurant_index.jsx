@@ -10,7 +10,10 @@ class RestaurantIndex extends React.Component {
     return (
       <div className="restaurant-flex-container">
         <div className="restaurant-flex-items">
-        <div className="restaurant-index-header"><h2>{this.props.cityName} Restaurants:</h2></div>
+          <div className="restaurant-index-header">
+            <h2>{this.props.cityName} Restaurants:</h2>
+          </div>
+
           {this.props.restaurants.map( restaurant => (
             <RestaurantIndexItem key={restaurant.id} restaurant={restaurant}/>
           ))}

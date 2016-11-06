@@ -1,5 +1,6 @@
 import React from 'react';
 import DetailsMap from '../map/map';
+import Review from './review';
 
 class RestaurantDetail extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class RestaurantDetail extends React.Component {
 
     address = `${street} ${cityName}, ${state} ${zipCode}`;
 
-    console.log(address);
+    // console.log(address);
     return address;
   }
 
@@ -57,6 +58,10 @@ class RestaurantDetail extends React.Component {
           </div>
           <div className="detail-main-reviews content-block">
             <h3>{this.props.restaurantDetail.name} Ratings and Reviews</h3>
+
+            {this.props.reviews.map(review => (
+              <Review key={review.id} review={review} />
+            ))}
           </div>
         </div>
       </div>
