@@ -20,6 +20,7 @@ class City extends React.Component {
                 <Link to={`/city/${city.id}`} key={city.id} >
                   <div style={cityStyle} className="city-item">
                     <h3>{city.name}</h3>
+                    <p>{city.num_of_restaurants} Restaurants</p>
                   </div>
                 </Link>
               );

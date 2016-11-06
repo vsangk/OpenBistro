@@ -18,9 +18,8 @@ sufficient CSS styling:
 - [ ] New account creation, login, and guest/demo login
 - [ ] List of available restaurants
 - [ ] Restaurant item page with details and user reviews
-- [ ] Book reservations through home page and restaurant item page
 - [ ] Users can write reviews for restaurants
-- [ ] Infinite scroll / pagination
+- [ ] Book reservations through home page and restaurant item page
 - [ ] Production README [sample](docs/production_readme.md)
 
 ## Design Docs
