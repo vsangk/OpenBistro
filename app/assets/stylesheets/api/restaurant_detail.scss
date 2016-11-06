@@ -1,0 +1,56 @@
+.detail-flex-container {
+}
+
+.detail-header-bg {
+  background-color: #ddd;
+  height: 200px;
+}
+
+.detail-main {
+  max-width: 85%;
+  margin: auto;
+}
+
+.content-block {
+  background-color: #fff;
+  margin: 40px 0;
+
+  h3 {
+    box-sizing: border-box;
+    font-weight: 400;
+    font-size: 24px;
+    margin: 0;
+    padding: 25px;
+  }
+
+  p {
+    box-sizing: border-box;
+    font-weight: 400;
+    font-size: 18px;
+    margin: 0;
+    padding: 25px;
+  }
+}
+
+.map {
+  height: 250px;
+  width: 100%;
+  background-color: #aaa;
+}
+
+.map-container {
+  position: relative;
+}
+
+.map-address {
+  position: absolute;
+  top: 30%;
+  left: 6%;
+  max-width: 200px;
+  z-index: 1;
+  padding: 20px;
+  color: #fff;
+  background-color: rgba(0,0,0,0.4);
+  text-shadow: 1px 1px #000;
+  border-radius: 7px;
+}
