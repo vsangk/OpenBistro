@@ -9,7 +9,7 @@ class DetailsMap extends React.Component {
     this.codeAddress = this.codeAddress.bind(this);
   }
 
-  componentDidMount() {
+  setupMap() {
     const mapDOMNode = this.refs.map;
     let latlng = this.codeAddress();
 
@@ -21,9 +21,17 @@ class DetailsMap extends React.Component {
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
   }
 
+  componentDidMount() {
+    this.setupMap();
+  }
+
+  componentDidUpdate() {
+    this.setupMap();
+  }
+
   codeAddress() {
-    // let address = this.props.address;
-    let address = '160 Spear Street #14, San Francisco, CA 94105';
+    let address = this.props.address;
+    // let address = '160 Spear Street #14, San Francisco, CA 94105';
     this.geocoder.geocode( { 'address': address}, (results, status) => {
       if (status === 'OK') {
         this.map.setCenter(results[0].geometry.location);
@@ -31,8 +39,8 @@ class DetailsMap extends React.Component {
             map: this.map,
             position: results[0].geometry.location
         });
-      } else {
-        alert('Geocode was not successful for the following reason: ' + status);
+      // } else {
+      //   alert('Geocode was not successful for the following reason: ' + status);
       }
     });
   }

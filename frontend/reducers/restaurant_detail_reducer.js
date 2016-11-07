@@ -4,7 +4,7 @@ import {
 } from '../actions/restaurant_actions';
 import merge from 'lodash/merge';
 
-const RestaurantDetailReducer = (state = {}, action) => {
+const RestaurantDetailReducer = (state = { detail_image_url: [] }, action) => {
   Object.freeze(state);
 
   switch (action.type) {

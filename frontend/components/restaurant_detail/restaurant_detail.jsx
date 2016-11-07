@@ -22,20 +22,16 @@ class RestaurantDetail extends React.Component {
     let state = this.props.restaurantDetail.state;
     let zipCode = this.props.restaurantDetail.zip_code;
 
-    address = `${street} ${cityName}, ${state} ${zipCode}`;
+    address = `${street}
+${cityName}, ${state} ${zipCode}`;
 
-    // console.log(address);
     return address;
   }
 
   // better way?
   getDetailImages() {
     let imageUrls;
-    if (this.props.restaurantDetail.detail_image_url) {
-      imageUrls = this.props.restaurantDetail.detail_image_url;
-    } else {
-      imageUrls = [];
-    }
+    imageUrls = this.props.restaurantDetail.detail_image_url;
 
     return imageUrls.map((imageUrl, idx) => {
       let imageStyle = { backgroundImage: `url(${imageUrl})`};
@@ -44,11 +40,11 @@ class RestaurantDetail extends React.Component {
   }
 
   render() {
-    // <RestaurantIndexItem restaurant={this.props.restaurant}/>
     let restaurantImageStyle = {
       backgroundImage: `url(${this.props.restaurantDetail.image_url})`
     };
 
+    // <RestaurantIndexItem restaurant={this.props.restaurant}/>
     return (
       <div className="detail-flex-container">
         <div className="detail-header">
