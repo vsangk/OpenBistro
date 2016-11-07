@@ -70,3 +70,50 @@
   height: 100%;
   width: 100%;
 }
+
+.detail-header-content {
+  padding: 20px 50px;
+}
+
+.dhc-container {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.dhc-pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 10px;
+  background-size: 175px, 135px;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+.dhc-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  margin-left: 30px;
+}
+
+.dhc-title {
+  font-size: 50px;
+  margin: -2px;
+}
+
+.dhc-reviews {
+  height: 20px;
+}
+
+.dhc-type-details li {
+  display: inline;
+  font-size: 18px;
+}
+
+.dhc-spacer {
+  margin: 0 15px;
+}

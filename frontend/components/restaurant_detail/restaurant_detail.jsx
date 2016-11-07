@@ -9,6 +9,7 @@ class RestaurantDetail extends React.Component {
 
     this.getAddress = this.getAddress.bind(this);
     this.getDetailImages = this.getDetailImages.bind(this);
+    this.getHeader = this.getHeader.bind(this);
   }
 
   componentDidMount() {
@@ -28,7 +29,48 @@ ${cityName}, ${state} ${zipCode}`;
     return address;
   }
 
-  // better way?
+  getHeader() {
+    let picStyle = {backgroundImage: `url(${this.props.restaurantDetail.image_url})`};
+
+    const greyDollars = () => {
+      let greyDollarSigns = `$`.repeat(4 - this.props.restaurantDetail.price);
+      let greyStyle = {color: `#ccc`};
+      return <p style={greyStyle}>{greyDollarSigns}</p>;
+    };
+
+    const starRating = () => {
+      // after ratings are implemented, pass in average rating as prop
+      let width = 87;
+      let starStyle = {width: `${width}%`};
+
+      return (
+        <div className="star-ratings-css">
+          <div className="star-ratings-css-top" style={starStyle}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        </div>
+      );
+    };
+
+    return (
+      <div className="dhc-container">
+        <div style={picStyle} className="dhc-pic" />
+        <div className="dhc-content">
+          <div className="dhc-title">{this.props.restaurantDetail.name}</div>
+          <div className="dhc-reviews">{starRating()}</div>
+          <div className="dhc-type-details">
+            <ul>
+              <li>{this.props.restaurantDetail.category}</li>
+              <li className="dhc-spacer">|</li>
+              <li>{this.props.restaurantDetail.neighborhood}
+              </li><li className="dhc-spacer">|</li>
+              <li className="dollars">{`$`.repeat(this.props.restaurantDetail.price)}{greyDollars()}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   getDetailImages() {
     let imageUrls;
     imageUrls = this.props.restaurantDetail.detail_image_url;
@@ -50,6 +92,7 @@ ${cityName}, ${state} ${zipCode}`;
         <div className="detail-header">
           <div className="detail-header-bg">
             <div className="detail-header-content">
+              {this.getHeader()}
             </div>
           </div>
         </div>

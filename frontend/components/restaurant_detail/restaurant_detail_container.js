@@ -4,6 +4,7 @@ import { requestRestaurantDetail } from '../../actions/restaurant_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let keys, reviews;
+  // refactor
   if (state.restaurantDetail.reviews) {
     keys = Object.keys(state.restaurantDetail.reviews);
     reviews = keys.map(key => state.restaurantDetail.reviews[key]);
@@ -13,7 +14,6 @@ const mapStateToProps = (state, ownProps) => {
 
   return ({
     restaurantDetail: state.restaurantDetail,
-    restaurant: state.restaurants[ownProps.params.restaurantId],
     restaurantId: ownProps.params.restaurantId,
     reviews
   });

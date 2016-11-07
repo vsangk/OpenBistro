@@ -43,7 +43,7 @@ const RestaurantIndexItem = ({ restaurant }) => {
           <div className="riic-reviews-price">
             <ul>
               <li>{starRating()}</li>
-              <li>{`$`.repeat(restaurant.price)}{greyDollars()}</li>
+              <li className="dollars">{`$`.repeat(restaurant.price)}{greyDollars()}</li>
             </ul>
           </div>
           <div className="riic-type-neighborhood">
