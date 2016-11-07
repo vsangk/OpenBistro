@@ -8,6 +8,7 @@ class RestaurantDetail extends React.Component {
     super(props);
 
     this.getAddress = this.getAddress.bind(this);
+    this.getDetailImages = this.getDetailImages.bind(this);
   }
 
   componentDidMount() {
@@ -27,11 +28,26 @@ class RestaurantDetail extends React.Component {
     return address;
   }
 
+  // better way?
+  getDetailImages() {
+    let imageUrls;
+    if (this.props.restaurantDetail.detail_image_url) {
+      imageUrls = this.props.restaurantDetail.detail_image_url;
+    } else {
+      imageUrls = [];
+    }
+
+    return imageUrls.map((imageUrl, idx) => {
+      let imageStyle = { backgroundImage: `url(${imageUrl})`};
+      return <div key={idx} style={imageStyle} className="detail-photos"/>;
+    });
+  }
+
   render() {
-    let restaurantDetailStyle = {
+    // <RestaurantIndexItem restaurant={this.props.restaurant}/>
+    let restaurantImageStyle = {
       backgroundImage: `url(${this.props.restaurantDetail.image_url})`
     };
-    // <RestaurantIndexItem restaurant={this.props.restaurant}/>
 
     return (
       <div className="detail-flex-container">
@@ -56,6 +72,9 @@ class RestaurantDetail extends React.Component {
           </div>
           <div className="detail-main-photos content-block">
             <h3>Restaurant Photos</h3>
+            <div className="detail-photos-container">
+              {this.getDetailImages()}
+            </div>
           </div>
           <div className="detail-main-reviews content-block">
             <h3>{this.props.restaurantDetail.name} Ratings and Reviews</h3>

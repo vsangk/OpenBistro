@@ -24,19 +24,20 @@ ActiveRecord::Schema.define(version: 20161106165814) do
   end
 
   create_table "restaurants", force: :cascade do |t|
-    t.string   "name",         null: false
-    t.string   "address",      null: false
-    t.string   "city_name",    null: false
-    t.string   "state",        null: false
-    t.string   "zip_code",     null: false
-    t.string   "neighborhood", null: false
-    t.string   "category",     null: false
-    t.string   "description",  null: false
-    t.string   "image_url",    null: false
-    t.integer  "city_id",      null: false
-    t.integer  "price",        null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "name",                          null: false
+    t.string   "address",                       null: false
+    t.string   "city_name",                     null: false
+    t.string   "state",                         null: false
+    t.string   "zip_code",                      null: false
+    t.string   "neighborhood",                  null: false
+    t.string   "category",                      null: false
+    t.string   "description",                   null: false
+    t.string   "image_url",                     null: false
+    t.string   "detail_image_url", default: [], null: false, array: true
+    t.integer  "city_id",                       null: false
+    t.integer  "price",                         null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   add_index "restaurants", ["city_id"], name: "index_restaurants_on_city_id", using: :btree

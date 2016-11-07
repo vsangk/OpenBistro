@@ -10,6 +10,7 @@ class CreateRestaurants < ActiveRecord::Migration
       t.string :category, null: false
       t.string :description, null: false
       t.string :image_url, null: false
+      t.string :detail_image_url, null: false, default: [], array: true
       t.integer :city_id, null: false, index: true
       t.integer :price, null: false
 
