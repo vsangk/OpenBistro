@@ -3,7 +3,7 @@ class Api::ReviewsController < ApplicationController
     @review = Review.new(review_params)
 
     if @review.save
-      render "api/restaurants/#{@review.restaurant_id}"
+      render :show
     else
       render json: @review.errors.full_messages, status: 422
     end
@@ -13,7 +13,7 @@ class Api::ReviewsController < ApplicationController
     @review = Review.find(params[:id])
 
     if @review.update(review_params)
-      render "api/restaurants/#{@review.restaurant_id}"
+      render :show
     else
       render json: @review.errors.full_messages, status: 422
     end
@@ -23,7 +23,7 @@ class Api::ReviewsController < ApplicationController
     @review = Review.find(params[:id])
 
     if @review.destroy
-      render "api/restaurants/#{@review.restaurant_id}"
+      render :show
     else
       render json: @review.errors.full_messages, status: 422
     end

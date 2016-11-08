@@ -3,11 +3,24 @@ import {
   requestAllRestaurants,
   receiveRestaurantDetail,
   requestRestaurantDetail,
+  removeReview,
   REQUEST_ALL_RESTAURANTS,
-  REQUEST_RESTAURANT_DETAIL
+  REQUEST_RESTAURANT_DETAIL,
+  CREATE_REVIEW,
+  UPDATE_REVIEW,
+  DELETE_REVIEW
   } from '../actions/restaurant_actions';
-import { fetchAllRestaurants } from '../util/restaurant_api_util';
-import { fetchRestaurantDetail } from '../util/restaurant_api_util';
+
+import {
+  fetchAllRestaurants,
+  fetchRestaurantDetail,
+} from '../util/restaurant_api_util';
+
+import {
+  createReview,
+  updateReview,
+  deleteReview
+} from '../util/review_api_util';
 
 export default ({ dispatch }) => next => action => {
   const fetchSuccess = restaurants => (
@@ -16,6 +29,8 @@ export default ({ dispatch }) => next => action => {
   const fetchDetailSuccess = restaurantDetail => (
     dispatch(receiveRestaurantDetail(restaurantDetail))
   );
+  const deleteReviewSuccess = review => dispatch(removeReview(review));
+
 
   switch (action.type) {
     case REQUEST_ALL_RESTAURANTS:
@@ -24,6 +39,18 @@ export default ({ dispatch }) => next => action => {
 
     case REQUEST_RESTAURANT_DETAIL:
       fetchRestaurantDetail(action.restaurantId, fetchDetailSuccess);
+      return next(action);
+
+    case CREATE_REVIEW:
+      createReview(action.review, fetchDetailSuccess);
+      return next(action);
+
+    case UPDATE_REVIEW:
+      updateReview(action.review, fetchDetailSuccess);
+      return next(action);
+
+    case DELETE_REVIEW:
+      deleteReview(action.id, deleteReviewSuccess);
       return next(action);
 
     default:

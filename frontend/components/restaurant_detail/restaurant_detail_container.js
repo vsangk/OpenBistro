@@ -3,14 +3,8 @@ import { connect } from 'react-redux';
 import { requestRestaurantDetail } from '../../actions/restaurant_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  let keys, reviews;
-  // refactor
-  if (state.restaurantDetail.reviews) {
-    keys = Object.keys(state.restaurantDetail.reviews);
-    reviews = keys.map(key => state.restaurantDetail.reviews[key]);
-  } else {
-    reviews = [];
-  }
+  let keys = Object.keys(state.restaurantDetail.reviews);
+  let reviews = keys.map(key => state.restaurantDetail.reviews[key]);
 
   return ({
     restaurantDetail: state.restaurantDetail,
