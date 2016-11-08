@@ -15,7 +15,8 @@ class DetailsMap extends React.Component {
 
     const mapOptions = {
       center: latlng,
-      zoom: 16
+      zoom: 16,
+      scrollwheel: false
     };
 
     this.map = new google.maps.Map(mapDOMNode, mapOptions);

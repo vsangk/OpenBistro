@@ -1,7 +1,6 @@
 import React from 'react';
 import DetailsMap from '../map/map';
 import Review from './review';
-import RestaurantIndexItem from '../restaurant_index/restaurant_index_item';
 
 class RestaurantDetail extends React.Component {
   constructor(props) {
@@ -30,8 +29,6 @@ ${cityName}, ${state} ${zipCode}`;
   }
 
   getHeader() {
-    let picStyle = {backgroundImage: `url(${this.props.restaurantDetail.image_url})`};
-
     const greyDollars = () => {
       let greyDollarSigns = `$`.repeat(4 - this.props.restaurantDetail.price);
       let greyStyle = {color: `#ccc`};
@@ -40,8 +37,8 @@ ${cityName}, ${state} ${zipCode}`;
 
     const starRating = () => {
       // after ratings are implemented, pass in average rating as prop
-      let width = 87;
-      let starStyle = {width: `${width}%`};
+      let rating = 87;
+      let starStyle = {width: `${rating}%`};
 
       return (
         <div className="star-ratings-css">
@@ -50,6 +47,8 @@ ${cityName}, ${state} ${zipCode}`;
         </div>
       );
     };
+
+    let picStyle = {backgroundImage: `url(${this.props.restaurantDetail.image_url})`};
 
     return (
       <div className="dhc-container">
@@ -61,8 +60,8 @@ ${cityName}, ${state} ${zipCode}`;
             <ul>
               <li>{this.props.restaurantDetail.category}</li>
               <li className="dhc-spacer">|</li>
-              <li>{this.props.restaurantDetail.neighborhood}
-              </li><li className="dhc-spacer">|</li>
+              <li>{this.props.restaurantDetail.neighborhood}</li>
+              <li className="dhc-spacer">|</li>
               <li className="dollars">{`$`.repeat(this.props.restaurantDetail.price)}{greyDollars()}</li>
             </ul>
           </div>
@@ -86,7 +85,6 @@ ${cityName}, ${state} ${zipCode}`;
       backgroundImage: `url(${this.props.restaurantDetail.image_url})`
     };
 
-    // <RestaurantIndexItem restaurant={this.props.restaurant}/>
     return (
       <div className="detail-flex-container">
         <div className="detail-header">
