@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import { modalStyle } from './modal_style';
 
-class ReviewForm extends React.Component {
+class CreateReviewModal extends React.Component {
   constructor(props) {
     super(props);
 
@@ -36,7 +36,7 @@ class ReviewForm extends React.Component {
     e.preventDefault();
     this.props.createReview({
       body: this.state.body,
-      rating: parseInt(this.state.rating),
+      rating: this.state.rating,
       user_id: this.props.currentUserId,
       restaurant_id: this.props.restaurantId
     });
@@ -57,18 +57,17 @@ class ReviewForm extends React.Component {
             {[1,2,3,4,5].map(rating => (
               <label key={rating}>
                 <input key={rating} type="radio" name="rating"
-                  value={rating} onChange={this.update('rating')} />
-                {rating}
+                  value={rating} onChange={this.update('rating')}/>
+                  {rating}
               </label>
             ))}
 
             <label>Review:
               <textarea rows="4" cols="30"
-                onChange={this.update('body')}
-                value={this.state.body}/>
+                onChange={this.update('body')}/>
             </label>
 
-            <button>Submit Review</button>
+            <button>Create Review!</button>
           </form>
 
         </Modal>
@@ -77,4 +76,4 @@ class ReviewForm extends React.Component {
   }
 }
 
-export default ReviewForm;
+export default CreateReviewModal;

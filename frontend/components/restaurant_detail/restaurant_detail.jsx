@@ -1,7 +1,7 @@
 import React from 'react';
 import DetailsMap from '../map/map';
 import Review from './review';
-import ReviewFormContainer from '../review_form/review_form_container';
+import CreateReviewModalContainer from '../review_modals/create_review_modal_container';
 
 class RestaurantDetail extends React.Component {
   constructor(props) {
@@ -120,14 +120,17 @@ ${cityName}, ${state} ${zipCode}`;
           </div>
           <div className="detail-main-reviews content-block">
             <h3>{this.props.restaurantDetail.name} Ratings and Reviews</h3>
-            <ReviewFormContainer
-              restaurantId={this.props.restaurantDetail.id}
-              currentUserId={this.props.currentUserId}
-            />
+            {this.props.currentUserId === -1 ? <div/> :
+              <CreateReviewModalContainer
+                restaurantId={this.props.restaurantDetail.id}
+                currentUserId={this.props.currentUserId}
+                />
+            }
             {this.props.reviews.map(review => (
               <Review key={review.id}
                 review={review}
                 currentUserId={this.props.currentUserId}
+                restaurantId={this.props.restaurantDetail.id}
                 deleteReview={this.props.deleteReview}
               />
             ))}
