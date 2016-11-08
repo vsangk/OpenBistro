@@ -1,6 +1,9 @@
 import RestaurantDetail from './restaurant_detail';
 import { connect } from 'react-redux';
-import { requestRestaurantDetail } from '../../actions/restaurant_actions';
+import {
+  requestRestaurantDetail ,
+  clearReviews
+} from '../../actions/restaurant_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let keys = Object.keys(state.restaurantDetail.reviews);
@@ -17,7 +20,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
   requestRestaurantDetail: restaurantId => (
     dispatch(requestRestaurantDetail(restaurantId))
-  )
+  ),
+  clearReviews: () => dispatch(clearReviews())
 });
 
 export default connect(

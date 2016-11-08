@@ -1,6 +1,7 @@
 import React from 'react';
 import DetailsMap from '../map/map';
 import Review from './review';
+import ReviewFormContainer from '../review_form/review_form_container';
 
 class RestaurantDetail extends React.Component {
   constructor(props) {
@@ -13,6 +14,10 @@ class RestaurantDetail extends React.Component {
 
   componentDidMount() {
     this.props.requestRestaurantDetail(this.props.restaurantId);
+  }
+
+  componentWillUnmount() {
+    this.props.clearReviews();
   }
 
   getAddress() {
@@ -115,7 +120,7 @@ ${cityName}, ${state} ${zipCode}`;
           </div>
           <div className="detail-main-reviews content-block">
             <h3>{this.props.restaurantDetail.name} Ratings and Reviews</h3>
-
+            <ReviewFormContainer restaurantId={this.props.restaurantDetail.id}/>
             {this.props.reviews.map(review => (
               <Review key={review.id} review={review} />
             ))}
