@@ -120,9 +120,16 @@ ${cityName}, ${state} ${zipCode}`;
           </div>
           <div className="detail-main-reviews content-block">
             <h3>{this.props.restaurantDetail.name} Ratings and Reviews</h3>
-            <ReviewFormContainer restaurantId={this.props.restaurantDetail.id}/>
+            <ReviewFormContainer
+              restaurantId={this.props.restaurantDetail.id}
+              currentUserId={this.props.currentUserId}
+            />
             {this.props.reviews.map(review => (
-              <Review key={review.id} review={review} />
+              <Review key={review.id}
+                review={review}
+                currentUserId={this.props.currentUserId}
+                deleteReview={this.props.deleteReview}
+              />
             ))}
           </div>
         </div>

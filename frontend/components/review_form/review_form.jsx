@@ -37,7 +37,7 @@ class ReviewForm extends React.Component {
     this.props.createReview({
       body: this.state.body,
       rating: parseInt(this.state.rating),
-      user_id: this.props.userId,
+      user_id: this.props.currentUserId,
       restaurant_id: this.props.restaurantId
     });
     this.closeModal();
@@ -63,7 +63,9 @@ class ReviewForm extends React.Component {
             ))}
 
             <label>Review:
-              <textarea rows="4" cols="30" onChange={this.update('body')}/>
+              <textarea rows="4" cols="30"
+                onChange={this.update('body')}
+                value={this.state.body}/>
             </label>
 
             <button>Submit Review</button>

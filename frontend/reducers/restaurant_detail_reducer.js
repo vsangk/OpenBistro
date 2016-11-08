@@ -34,7 +34,7 @@ const RestaurantDetailReducer = (state = _defaultState, action) => {
 
     case REMOVE_REVIEW:
       newState = merge({}, state);
-      delete newState[action.review.id];
+      delete newState.reviews[action.review.id];
       return newState;
 
     case CLEAR_REVIEWS:
