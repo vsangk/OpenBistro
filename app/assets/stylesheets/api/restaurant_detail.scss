@@ -1,7 +1,4 @@
-.detail-flex-container {
-}
-
-.detail-header-bg {
+.detail-header {
   background: linear-gradient(to top right, rgba(170,170,170, 0.2), rgba(80,80,80,1));
   height: 200px;
 }
@@ -111,9 +108,13 @@
 
 .dhc-reviews {
   height: 20px;
+  display: inline-flex;
 }
 
-.dhc-type-details li {
-  display: inline;
-  font-size: 18px;
+.dhc-type-details {
+  margin: 4px;
+
+  li {
+    display: inline;
+  }
 }

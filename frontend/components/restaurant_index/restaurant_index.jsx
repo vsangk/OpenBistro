@@ -15,7 +15,10 @@ class RestaurantIndex extends React.Component {
           </div>
 
           {this.props.restaurants.map( restaurant => (
-            <RestaurantIndexItem key={restaurant.id} restaurant={restaurant}/>
+            <RestaurantIndexItem key={restaurant.id}
+              restaurant={restaurant}
+              avgRating={restaurant.avg_rating}
+              totalReviews={restaurant.total_reviews}/>
           ))}
         </div>
       </div>

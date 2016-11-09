@@ -16,6 +16,7 @@ class CreateReviewModal extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.getRadioButtons = this.getRadioButtons.bind(this);
   }
 
   _handleClick() {
@@ -32,6 +33,20 @@ class CreateReviewModal extends React.Component {
     };
   }
 
+  getRadioButtons(rating) {
+    if (rating === 1) {
+      return(
+        <input key={rating} type="radio" name="rating"
+          value={rating} checked="checked" onChange={this.update('rating')}/>
+      );
+    } else {
+      return(
+        <input key={rating} type="radio" name="rating"
+          value={rating} onChange={this.update('rating')}/>
+      );
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.createReview({
@@ -45,8 +60,8 @@ class CreateReviewModal extends React.Component {
 
   render() {
     return(
-      <div>
-        <button onClick={this._handleClick}>Leave A Review</button>
+      <div className="create-review-modal">
+        <button onClick={this._handleClick}>Write a Review</button>
 
         <Modal
           isOpen={this.state.modalOpen}
@@ -56,16 +71,17 @@ class CreateReviewModal extends React.Component {
           <form onSubmit={this.handleSubmit}>
             {[1,2,3,4,5].map(rating => (
               <label key={rating}>
-                <input key={rating} type="radio" name="rating"
-                  value={rating} onChange={this.update('rating')}/>
+                  {this.getRadioButtons(rating)}
                   {rating}
               </label>
             ))}
+            <br/>
 
-            <label>Review:
-              <textarea rows="4" cols="30"
-                onChange={this.update('body')}/>
-            </label>
+              <textarea rows="8" cols="60"
+                placeholder="Review..."
+                onChange={this.update('body')}
+                style={{fontSize: `14px`}}/>
+            <br/>
 
             <button>Create Review!</button>
           </form>

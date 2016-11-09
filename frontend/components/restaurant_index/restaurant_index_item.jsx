@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import { starRating } from '../misc/stars';
 
-const RestaurantIndexItem = ({ restaurant }) => {
+const RestaurantIndexItem = ({ restaurant, avgRating, totalReviews }) => {
   let restaurantStyle = {backgroundImage: `url(${restaurant.image_url})`};
 
   const timeSlotButtons = () => {
@@ -30,7 +30,10 @@ const RestaurantIndexItem = ({ restaurant }) => {
           </div>
           <div className="riic-reviews-price">
             <ul>
-              <li>{starRating(87)}</li>
+              <div className="dhc-reviews">
+                <span className="review-stars">{starRating(avgRating)}</span>
+                <span style={{margin: '3px'}}>{totalReviews} Reviews</span>
+              </div>
               <li className="dollars">{`$`.repeat(restaurant.price)}{greyDollars()}</li>
             </ul>
           </div>

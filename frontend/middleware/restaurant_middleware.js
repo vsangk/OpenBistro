@@ -26,9 +26,11 @@ export default ({ dispatch }) => next => action => {
   const fetchSuccess = restaurants => (
     dispatch(receiveAllRestaurants(restaurants))
   );
-  const fetchDetailSuccess = restaurantDetail => (
-    dispatch(receiveRestaurantDetail(restaurantDetail))
-  );
+  const fetchDetailSuccess = restaurantDetail => {
+    return (
+      dispatch(receiveRestaurantDetail(restaurantDetail))
+    );
+  };
   const deleteReviewSuccess = review => dispatch(removeReview(review));
 
 
@@ -42,6 +44,7 @@ export default ({ dispatch }) => next => action => {
       return next(action);
 
     case CREATE_REVIEW:
+      // debugger
       createReview(action.review, fetchDetailSuccess);
       return next(action);
 

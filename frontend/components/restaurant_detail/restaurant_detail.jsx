@@ -48,7 +48,10 @@ ${cityName}, ${state} ${zipCode}`;
         <div style={picStyle} className="dhc-pic" />
         <div className="dhc-content">
           <div className="dhc-title">{this.props.restaurantDetail.name}</div>
-          <div className="dhc-reviews">{starRating(87)}</div>
+          <div className="dhc-reviews">
+            <span className="review-stars">{starRating(this.props.restaurantDetail.avg_rating)}</span>
+            <span>{this.props.restaurantDetail.total_reviews} Reviews</span>
+          </div>
           <div className="dhc-type-details">
             <ul>
               <li>{this.props.restaurantDetail.category}</li>
@@ -81,10 +84,8 @@ ${cityName}, ${state} ${zipCode}`;
     return (
       <div className="detail-flex-container">
         <div className="detail-header">
-          <div className="detail-header-bg">
-            <div className="detail-header-content">
-              {this.getHeader()}
-            </div>
+          <div className="detail-header-content">
+            {this.getHeader()}
           </div>
         </div>
 
