@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
+import { starRating } from '../misc/stars';
 
 const RestaurantIndexItem = ({ restaurant }) => {
   let restaurantStyle = {backgroundImage: `url(${restaurant.image_url})`};
@@ -20,19 +21,6 @@ const RestaurantIndexItem = ({ restaurant }) => {
     return <p style={greyStyle}>{greyDollarSigns}</p>;
   };
 
-  const starRating = () => {
-    // after ratings are implemented, pass in average rating as prop
-    let width = 87;
-    let starStyle = {width: `${width}%`};
-
-    return (
-      <div className="star-ratings-css">
-        <div className="star-ratings-css-top" style={starStyle}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      </div>
-    );
-  };
-
   return (
     <div className="restaurant-index-item">
       <Link to={`/restaurant/${restaurant.id}`} style={restaurantStyle} className="restaurant-index-item-pic" />
@@ -42,7 +30,7 @@ const RestaurantIndexItem = ({ restaurant }) => {
           </div>
           <div className="riic-reviews-price">
             <ul>
-              <li>{starRating()}</li>
+              <li>{starRating(87)}</li>
               <li className="dollars">{`$`.repeat(restaurant.price)}{greyDollars()}</li>
             </ul>
           </div>

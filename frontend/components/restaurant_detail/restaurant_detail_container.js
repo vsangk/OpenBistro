@@ -9,12 +9,13 @@ import {
 const mapStateToProps = (state, ownProps) => {
   let keys = Object.keys(state.restaurantDetail.reviews);
   let reviews = keys.map(key => state.restaurantDetail.reviews[key]);
-  let currentUserId = state.session.currentUser ? state.session.currentUser.id : -1;
+  let currentUser = state.session.currentUser ?
+    state.session.currentUser : { username: '', id: -1 };
 
   return ({
     restaurantDetail: state.restaurantDetail,
     restaurantId: ownProps.params.restaurantId,
-    currentUserId,
+    currentUser,
     reviews
   });
 };

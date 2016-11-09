@@ -1,7 +1,8 @@
 import React from 'react';
-import DetailsMap from '../map/map';
+import DetailsMap from '../misc/map';
 import Review from './review';
 import CreateReviewModalContainer from '../review_modals/create_review_modal_container';
+import { starRating } from '../misc/stars';
 
 class RestaurantDetail extends React.Component {
   constructor(props) {
@@ -40,19 +41,6 @@ ${cityName}, ${state} ${zipCode}`;
       return <p style={greyStyle}>{greyDollarSigns}</p>;
     };
 
-    const starRating = () => {
-      // after ratings are implemented, pass in average rating as prop
-      let rating = 87;
-      let starStyle = {width: `${rating}%`};
-
-      return (
-        <div className="star-ratings-css">
-          <div className="star-ratings-css-top" style={starStyle}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-          <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        </div>
-      );
-    };
-
     let picStyle = {backgroundImage: `url(${this.props.restaurantDetail.image_url})`};
 
     return (
@@ -60,13 +48,13 @@ ${cityName}, ${state} ${zipCode}`;
         <div style={picStyle} className="dhc-pic" />
         <div className="dhc-content">
           <div className="dhc-title">{this.props.restaurantDetail.name}</div>
-          <div className="dhc-reviews">{starRating()}</div>
+          <div className="dhc-reviews">{starRating(87)}</div>
           <div className="dhc-type-details">
             <ul>
               <li>{this.props.restaurantDetail.category}</li>
-              <li className="dhc-spacer">|</li>
+              <li className="spacer">|</li>
               <li>{this.props.restaurantDetail.neighborhood}</li>
-              <li className="dhc-spacer">|</li>
+              <li className="spacer">|</li>
               <li className="dollars">{`$`.repeat(this.props.restaurantDetail.price)}{greyDollars()}</li>
             </ul>
           </div>
@@ -120,20 +108,22 @@ ${cityName}, ${state} ${zipCode}`;
           </div>
           <div className="detail-main-reviews content-block">
             <h3>{this.props.restaurantDetail.name} Ratings and Reviews</h3>
-            {this.props.currentUserId === -1 ? <div/> :
+            {this.props.currentUser.id === -1 ? <div/> :
               <CreateReviewModalContainer
                 restaurantId={this.props.restaurantDetail.id}
-                currentUserId={this.props.currentUserId}
+                currentUserId={this.props.currentUser.id}
                 />
             }
-            {this.props.reviews.map(review => (
-              <Review key={review.id}
-                review={review}
-                currentUserId={this.props.currentUserId}
-                restaurantId={this.props.restaurantDetail.id}
-                deleteReview={this.props.deleteReview}
-              />
-            ))}
+            <div className="review-container">
+              {this.props.reviews.map(review => (
+                <Review key={review.id}
+                  review={review}
+                  currentUser={this.props.currentUser}
+                  restaurantId={this.props.restaurantDetail.id}
+                  deleteReview={this.props.deleteReview}
+                  />
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -32,6 +32,10 @@
   }
 }
 
+.spacer {
+  margin: 0 15px;
+}
+
 .map {
   height: 250px;
   width: 100%;
@@ -79,7 +83,7 @@
   display: flex;
   justify-content: flex-start;
   max-width: 1200px;
-  margin: auto;
+  margin-left: 3%;
 }
 
 .dhc-pic {
@@ -112,8 +116,4 @@
 .dhc-type-details li {
   display: inline;
   font-size: 18px;
-}
-
-.dhc-spacer {
-  margin: 0 15px;
 }

@@ -1,3 +1,48 @@
 // Place all the styles related to the api/reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.detail-main-reviews {
+  h3 {
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+.review-container {
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 0 35px 20px 35px;
+}
+
+.review-item {
+  margin: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+
+  ul {
+    display: inline-flex;
+  }
+}
+.review-body {
+  margin: 10px 0;
+}
+
+#review-stars {
+  margin: 2px 10px 2px 2px;
+}
+
+.review-links {
+  font-size: 14px;
+  color: #999;
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    cursor: pointer;
+  }
+
+  a:hover {
+    color: #0095ff;
+  }
+}
