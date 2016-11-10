@@ -16,7 +16,6 @@ class UpdateReviewModal extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
-    this.getRadioButtons = this.getRadioButtons.bind(this);
   }
 
   _handleClick() {
@@ -33,20 +32,6 @@ class UpdateReviewModal extends React.Component {
     };
   }
 
-  getRadioButtons(rating) {
-    if (rating === this.state.rating) {
-      return(
-        <input key={rating} type="radio" name="rating"
-          value={rating} checked="checked" onChange={this.update('rating')}/>
-      );
-    } else {
-      return(
-        <input key={rating} type="radio" name="rating"
-          value={rating} onChange={this.update('rating')}/>
-      );
-    }
-  }
-
   handleSubmit(e) {
     e.preventDefault();
     this.props.updateReview({
@@ -56,7 +41,10 @@ class UpdateReviewModal extends React.Component {
       user_id: this.props.currentUserId,
       restaurant_id: this.props.restaurantId
     });
-    this.closeModal();
+
+    if (this.state.body !== "") {
+      this.closeModal();
+    }
   }
 
   render() {
@@ -69,13 +57,30 @@ class UpdateReviewModal extends React.Component {
           onRequestClose={this.closeModal}
           style={modalStyle}>
 
-          <form onSubmit={this.handleSubmit}>
-            {[1,2,3,4,5].map(rating => (
-              <label key={rating}>
-                {this.getRadioButtons(rating)}
-                {rating}
-              </label>
-            ))}
+          <form onSubmit={this.handleSubmit} className="modal-form">
+            <p>Edit Your Review</p>
+            <div className="rate">
+              <input type="radio" id="star5" name="5" value="5"
+                checked={this.state.rating.toString() === "5"}
+                onChange={this.update("rating")}/>
+              <label htmlFor="star5" title="text">5 stars</label>
+              <input type="radio" id="star4" name="4" value="4"
+                checked={this.state.rating.toString() === "4"}
+                onChange={this.update("rating")}/>
+              <label htmlFor="star4" title="text">4 stars</label>
+              <input type="radio" id="star3" name="3" value="3"
+                checked={this.state.rating.toString() === "3"}
+                onChange={this.update("rating")}/>
+              <label htmlFor="star3" title="text">3 stars</label>
+              <input type="radio" id="star2" name="2" value="2"
+                checked={this.state.rating.toString() === "2"}
+                onChange={this.update("rating")}/>
+              <label htmlFor="star2" title="text">2 stars</label>
+              <input type="radio" id="star1" name="1" value="1"
+                checked={this.state.rating.toString() === "1"}
+                onChange={this.update("rating")}/>
+              <label htmlFor="star1" title="text">1 star</label>
+            </div>
             <br/>
 
             <textarea rows="8" cols="60"

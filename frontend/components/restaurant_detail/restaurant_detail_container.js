@@ -1,9 +1,10 @@
 import RestaurantDetail from './restaurant_detail';
 import { connect } from 'react-redux';
 import {
-  requestRestaurantDetail ,
+  requestRestaurantDetail,
   clearReviews,
-  deleteReview
+  deleteReview,
+  createReservation
 } from '../../actions/restaurant_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -26,7 +27,8 @@ const mapDispatchToProps = dispatch => ({
     dispatch(requestRestaurantDetail(restaurantId))
   ),
   clearReviews: () => dispatch(clearReviews()),
-  deleteReview: reviewId => dispatch(deleteReview(reviewId))
+  deleteReview: reviewId => dispatch(deleteReview(reviewId)),
+  createReservation: reservation => dispatch(createReservation(reservation))
 });
 
 export default connect(

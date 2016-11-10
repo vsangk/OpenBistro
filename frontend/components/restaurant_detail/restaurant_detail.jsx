@@ -3,6 +3,7 @@ import DetailsMap from '../misc/map';
 import Review from './review';
 import CreateReviewModalContainer from '../review_modals/create_review_modal_container';
 import { starRating } from '../misc/stars';
+import ReservationSearch from '../reservation/reservation_search';
 
 class RestaurantDetail extends React.Component {
   constructor(props) {
@@ -77,6 +78,8 @@ ${cityName}, ${state} ${zipCode}`;
   }
 
   render() {
+    console.log(this.props.restaurantId);
+
     let restaurantImageStyle = {
       backgroundImage: `url(${this.props.restaurantDetail.image_url})`
     };
@@ -92,6 +95,10 @@ ${cityName}, ${state} ${zipCode}`;
         <div className="detail-main">
           <div className="detail-main-reservation content-block">
             <h3>Make a reservation</h3>
+            <ReservationSearch
+              createReservation={this.props.createReservation}
+              currentUserId={this.props.currentUser.id}
+              restaurantId={this.props.restaurantDetail.id}/>
           </div>
           <div className="detail-main-about content-block">
             <h3>About {this.props.restaurantDetail.name}</h3>

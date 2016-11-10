@@ -19,6 +19,7 @@ const _defaultState = {
   name: '',
   neighborhood: '',
   rating: 0,
+  reservations: {},
   reviews: {},
   state: '',
   zip_code: ''
