@@ -6,6 +6,7 @@ class Api::RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
     @reviews = @restaurant.reviews
+    @reservations = @restaurant.reservations
 
     sum_rating = 0
     @reviews.each do |review|
