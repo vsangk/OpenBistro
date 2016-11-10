@@ -44,6 +44,13 @@ class UpdateReviewModal extends React.Component {
 
     if (this.state.body !== "") {
       this.closeModal();
+    } else {
+      document.getElementById("editBody").style.borderColor = "red";
+      let body = document.getElementById("editBody");
+      body.style.border = "2px solid red";
+      setTimeout( () => {
+        body.style.border = "1px solid black";
+      }, 200);
     }
   }
 
@@ -83,7 +90,7 @@ class UpdateReviewModal extends React.Component {
             </div>
             <br/>
 
-            <textarea rows="8" cols="60"
+            <textarea rows="8" cols="60" id="editBody"
               placeholder="Review..."
               onChange={this.update('body')}
               style={{fontSize: `14px`}}

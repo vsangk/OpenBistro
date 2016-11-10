@@ -23,6 +23,7 @@ class CreateReviewModal extends React.Component {
   }
 
   closeModal() {
+    this.setState({ body: "" });
     this.setState({ modalOpen: false });
   }
 
@@ -40,7 +41,16 @@ class CreateReviewModal extends React.Component {
       user_id: this.props.currentUserId,
       restaurant_id: this.props.restaurantId
     });
-    this.closeModal();
+
+    if (this.state.body !== "") {
+      this.closeModal();
+    } else {
+      let body = document.getElementById("createBody");
+      body.style.border = "2px solid red";
+      setTimeout( () => {
+        body.style.border = "1px solid black";
+      }, 200);
+    }
   }
 
   render() {
@@ -80,7 +90,7 @@ class CreateReviewModal extends React.Component {
             </div>
             <br/>
 
-              <textarea rows="8" cols="60"
+              <textarea rows="8" cols="60" id="createBody"
                 placeholder="Review..."
                 onChange={this.update("body")}
                 style={{fontSize: `14px`}}/>
