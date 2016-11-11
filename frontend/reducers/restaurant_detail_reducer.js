@@ -1,12 +1,17 @@
 import {
   receiveRestaurantDetail,
-  RECEIVE_RESTAURANT_DETAIL,
+  RECEIVE_RESTAURANT_DETAIL
+} from '../actions/restaurant_actions';
+
+import {
   removeReview,
   REMOVE_REVIEW,
   clearReviews,
-  CLEAR_REVIEWS,
-  RECEIVE_TIME_SLOT
-} from '../actions/restaurant_actions';
+  CLEAR_REVIEWS
+} from '../actions/review_actions';
+
+import { RECEIVE_TIME_SLOT } from '../actions/reservation_actions';
+
 import merge from 'lodash/merge';
 
 const _defaultState = {

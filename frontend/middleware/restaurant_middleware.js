@@ -3,18 +3,24 @@ import {
   requestAllRestaurants,
   receiveRestaurantDetail,
   requestRestaurantDetail,
-  removeReview,
-  receiveTimeSlot,
   REQUEST_ALL_RESTAURANTS,
   REQUEST_RESTAURANT_DETAIL,
+  } from '../actions/restaurant_actions';
+
+import {
+  removeReview,
   CREATE_REVIEW,
   UPDATE_REVIEW,
-  DELETE_REVIEW,
+  DELETE_REVIEW
+} from '../actions/review_actions';
+
+import {
+  receiveTimeSlot,
   CREATE_RESERVATION,
   UPDATE_RESERVATION,
   DELETE_RESERVATION,
-  FETCH_TIMES,
-  } from '../actions/restaurant_actions';
+  FETCH_TIMES
+} from '../actions/reservation_actions';
 
 import {
   fetchAllRestaurants,

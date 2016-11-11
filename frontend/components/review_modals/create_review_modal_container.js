@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import CreateReviewModal from './create_review_modal';
-import { createReview } from '../../actions/restaurant_actions';
+import { createReview } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return ({

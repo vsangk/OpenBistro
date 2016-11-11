@@ -1,12 +1,16 @@
 import RestaurantDetail from './restaurant_detail';
 import { connect } from 'react-redux';
+import { requestRestaurantDetail } from '../../actions/restaurant_actions';
+
 import {
-  requestRestaurantDetail,
   clearReviews,
-  deleteReview,
+  deleteReview
+} from '../../actions/review_actions';
+
+import {
   createReservation,
   fetchTimes
-} from '../../actions/restaurant_actions';
+} from '../../actions/reservation_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let keys = Object.keys(state.restaurantDetail.reviews);
