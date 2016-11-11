@@ -44,6 +44,7 @@ class CreateReviewModal extends React.Component {
 
     if (this.state.body !== "") {
       this.closeModal();
+      this.setState({ rating: 1, body: "" });
     } else {
       let body = document.getElementById("createBody");
       body.style.border = "2px solid red";

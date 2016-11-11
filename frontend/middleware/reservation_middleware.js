@@ -1,6 +1,7 @@
 import {
   receiveTimeSlot,
   receiveAllReservations,
+  removeReservation,
   CREATE_RESERVATION,
   UPDATE_RESERVATION,
   DELETE_RESERVATION,
@@ -32,6 +33,10 @@ export default ({ dispatch }) => next => action => {
     dispatch(receiveAllReservations(reservations))
   );
 
+  const deleteSuccess = id => (
+    dispatch(removeReservation(id))
+  );
+
   switch (action.type) {
     case CREATE_RESERVATION:
       createReservation(action.reservation, reservationSuccess);
@@ -42,7 +47,7 @@ export default ({ dispatch }) => next => action => {
       return next(action);
 
     case DELETE_RESERVATION:
-      deleteReservation(action.id, fetchDetailSuccess);
+      deleteReservation(action.id, deleteSuccess);
       return next(action);
 
     case FETCH_TIMES:

@@ -2,8 +2,17 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import { starRating } from '../misc/stars';
 
-const ReservationItem = ({ reservation }) => {
+const ReservationItem = ({ reservation, deleteReservation }) => {
   let reservationStyle = {backgroundImage: `url(${reservation.image_url})`};
+
+  const handleDelete = id => {
+    return e => {
+      e.preventDefault();
+      if (confirm("Delete your review?") === true) {
+        deleteReservation(id);
+      }
+    };
+  };
 
   return (
     <div className="reservation-item">
@@ -22,6 +31,7 @@ const ReservationItem = ({ reservation }) => {
               <li>Date: {reservation.date_slot}</li>
               <li>Time: {reservation.time_slot}:00 PM</li>
             </ul>
+            <button onClick={handleDelete(reservation.id)}>Cancel Your Reservation</button>
           </div>
         </div>
     </div>

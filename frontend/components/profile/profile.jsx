@@ -18,6 +18,7 @@ class Profile extends React.Component {
           <h3>Your Reservations</h3>
           {this.props.reservations.map( reservation => (
             <ReservationItem key={reservation.id}
+              deleteReservation={this.props.deleteReservation}
               reservation={reservation} />
           ))}
         </div>

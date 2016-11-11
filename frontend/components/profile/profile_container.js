@@ -2,9 +2,12 @@ import { connect } from 'react-redux';
 import Profile from './profile';
 import {
   requestAllReviews,
-  deleteReview
+  deleteReview,
 } from '../../actions/review_actions';
-import { requestAllReservations } from '../../actions/reservation_actions';
+import {
+  requestAllReservations,
+  deleteReservation
+} from '../../actions/reservation_actions';
 
 const mapStateToProps = state => {
   let keys;
@@ -25,7 +28,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   requestAllReviews: () => dispatch(requestAllReviews()),
   requestAllReservations: () => dispatch(requestAllReservations()),
-  deleteReview: id => dispatch(deleteReview(id))
+  deleteReview: id => dispatch(deleteReview(id)),
+  deleteReservation: id => dispatch(deleteReservation(id))
 });
 
 export default connect(

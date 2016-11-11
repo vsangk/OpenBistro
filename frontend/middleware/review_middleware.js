@@ -32,6 +32,10 @@ export default ({ dispatch }) => next => action => {
     dispatch(receiveAllReviews(restaurants))
   );
 
+  const newReviewDeleteSuccess = review => (
+    dispatch(removeReview(review))
+  );
+
   switch (action.type) {
     case CREATE_REVIEW:
       createReview(action.review, fetchDetailSuccess);
@@ -42,7 +46,7 @@ export default ({ dispatch }) => next => action => {
       return next(action);
 
     case DELETE_REVIEW:
-      deleteReview(action.id, deleteReviewSuccess);
+      deleteReview(action.id, newReviewDeleteSuccess);
       return next(action);
 
     case REQUEST_ALL_REVIEWS:
