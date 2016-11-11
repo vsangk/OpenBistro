@@ -12,9 +12,9 @@ class Profile extends React.Component {
   render() {
     return (
       <div className="profile-container">
-        <h2>Welcome {this.props.currentUser.username}</h2>
+        <h2>{`${this.props.currentUser.username}'s Profile`}</h2>
 
-        <div className="reservation-container">
+        <div className="reservation-container content-block">
           <h3>Your Reservations</h3>
           {this.props.reservations.map( reservation => (
             <ReservationItem key={reservation.id}
@@ -23,7 +23,7 @@ class Profile extends React.Component {
           ))}
         </div>
 
-        <div className="review-container">
+        <div className="review-container content-block">
           <h3>Your Reviews</h3>
           {this.props.reviews.map(review => (
             <Review key={review.id}

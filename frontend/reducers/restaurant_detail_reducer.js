@@ -51,7 +51,6 @@ const RestaurantDetailReducer = (state = _defaultState, action) => {
       return newState;
 
     case RECEIVE_TIME_SLOT:
-      debugger;
       newState = merge({}, state);
       newState.available_times[action.timeSlot] = false;
       return newState;

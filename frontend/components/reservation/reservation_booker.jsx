@@ -5,20 +5,12 @@ class ReservationBooker extends React.Component {
     super(props);
 
     this.state = {
-      party_size: 2,
       time_slot: 0,
+      party_size: this.props.partySize,
       date_slot: this.props.dateSlot,
       user_id: this.props.currentUserId,
       restaurant_id: this.props.restaurantId
     };
-
-    // this.state = {
-    //   partySize: this.props.partySize,
-    //   timeSlot: 0,
-    //   dateSlot: this.props.datSlot,
-    //   user_id: this.props.currentUserId,
-    //   restaurant_id: this.props.restaurantId
-    // };
 
     this.timeSlotButtons = this.timeSlotButtons.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -58,7 +50,7 @@ class ReservationBooker extends React.Component {
     return (
       <div className="reservation">
         <p>Available Time Slots for {this.props.dateSlot}</p>
-        <div className="reservation-buttons">
+        <div className="reservation-button-container">
           {this.timeSlotButtons()}
         </div>
       </div>

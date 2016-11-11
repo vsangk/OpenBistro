@@ -27,18 +27,22 @@
   }
 }
 
-.reservation-buttons {
+.reservation-button-container {
   width: 750px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.reservation-buttons button {
+.reservation-button-container button {
   min-width: 110px;
   min-height: 36px;
   color: white;
   border-radius: 4px;
+}
+
+.reservation-button-container button:focus {
+  outline: none;
 }
 
 .time-slot-active {
@@ -46,10 +50,7 @@
 }
 
 .time-slot-inactive {
-  background-color: #aaa;
+  background-color: #888;
   border-color: #aaa;
-}
-
-.time-slot-inactive:active {
-
+  border: 0 none;
 }

@@ -1,19 +1,24 @@
-.profile-container h3 {
-  font-size: 24px;
-}
-
-.reservation-container {
+.profile-container {
   max-width: 80%;
   margin: auto;
-  box-sizing: border-box;
-  padding: 40px;
+
+  h2 {
+    font-size: 38px;
+    margin: 50px 20px 0;
+  }
+}
+
+.reservation-container, .review-container{
+
 }
 
 .reservation-item {
   display: flex;
   height: 155px;
-  margin: 10px;
   border-bottom: solid 1px #ccc;
+
+  box-sizing: border-box;
+  margin: 20px 40px 40px;
 }
 
 .reservation-pic {
@@ -62,11 +67,4 @@
   width: 150px;
   height: 41px;
   border-radius: 6px;
-}
-
-// Review Styling
-
-.review-container {
-  max-width: 80%;
-  margin: auto;
 }

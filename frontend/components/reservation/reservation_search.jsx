@@ -20,20 +20,12 @@ class ReservationSearch extends React.Component {
 
     today = `${yyyy}-${mm}-${dd}`;
 
-    // hardcoded for testing
     this.state = {
       party_size: 2,
       date_slot: today,
       restaurant_id: this.props.restaurantId,
       hideBooker: true
     };
-
-    // // real, timeSlot not really used for now
-    // this.state = {
-    //   partySize: 0,
-    //   timeSlot: 0,
-    //   dateSlot: "",
-    // };
 
     this.update = this.update.bind(this);
     this.handleTimes = this.handleTimes.bind(this);
@@ -96,7 +88,8 @@ class ReservationSearch extends React.Component {
             restaurantId={this.props.restaurantId}
             dateSlot={this.state.date_slot}
             availableTimes={this.props.availableTimes}
-            fetchTimes={this.props.fetchTimes}/>
+            fetchTimes={this.props.fetchTimes}
+            partySize={this.state.party_size}/>
         }
       </div>
     );
