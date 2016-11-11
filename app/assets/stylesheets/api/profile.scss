@@ -1,0 +1,56 @@
+.reservation-container {
+  max-width: 80%;
+  margin: auto;
+  box-sizing: border-box;
+  padding: 40px;
+}
+
+.reservation-item {
+  display: flex;
+  height: 155px;
+  margin: 10px;
+  border-bottom: solid 1px #ccc;
+}
+
+.reservation-pic {
+  width: 175px;
+  height: 135px;
+  border-radius: 10px;
+  background-size: 175px, 135px;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+.reservation-content {
+  flex: 1;
+  font-size: 14px;
+  box-sizing: border-box;
+  margin: 0 20px;
+
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 16px 0 0;
+    font-size: 20px;
+  }
+}
+
+.reservation-title {
+  a {
+    font-size: 26px;
+  }
+}
+
+.reservation-details {
+  color: #666;
+}
+
+// Review Styling
+
+.review-container {
+  max-width: 80%;
+  margin: auto;
+}

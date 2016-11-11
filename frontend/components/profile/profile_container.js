@@ -7,12 +7,17 @@ import {
 import { requestAllReservations } from '../../actions/reservation_actions';
 
 const mapStateToProps = state => {
-  let keys = Object.keys(state.profile.reviews);
+  let keys;
+  keys = Object.keys(state.profile.reviews);
   let reviews = keys.map(key => state.profile.reviews[key]);
+
+  keys = Object.keys(state.profile.reservations);
+  let reservations = keys.map(key => state.profile.reservations[key]);
 
   return ({
     currentUser: state.session.currentUser,
-    reviews
+    reviews,
+    reservations
   });
 };
 
