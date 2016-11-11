@@ -23,7 +23,6 @@ const ProfileReducer = (state = _defaultState, action) => {
       return merge({}, state, action.reviews);
 
     case REMOVE_REVIEW:
-      debugger
       newState = merge({}, state);
       delete newState.reviews[action.review.id];
       return newState;
