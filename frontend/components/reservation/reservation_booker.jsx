@@ -38,14 +38,15 @@ class ReservationBooker extends React.Component {
     timeSlots = timeSlots.map(timeSlot => {
       if (this.props.availableTimes[timeSlot]) {
         return (
-          <button key={timeSlot} onClick={this.handleClick(timeSlot)}>
+          <button key={timeSlot} onClick={this.handleClick(timeSlot)}
+            className="time-slot-active">
             {timeSlot}:00 PM
           </button>
         );
       } else {
         return (
           <button key={timeSlot} className="time-slot-inactive">
-            N/A
+            Booked
           </button>
         );
       }
@@ -55,9 +56,11 @@ class ReservationBooker extends React.Component {
 
   render() {
     return (
-      <div className="reservation-buttons">
+      <div className="reservation">
         <p>Available Time Slots for {this.props.dateSlot}</p>
-        {this.timeSlotButtons()}
+        <div className="reservation-buttons">
+          {this.timeSlotButtons()}
+        </div>
       </div>
     );
   }

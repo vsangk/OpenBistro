@@ -11,7 +11,7 @@ class Profile extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="profile-container">
         <h2>Welcome {this.props.currentUser.username}</h2>
 
         <div className="reservation-container">

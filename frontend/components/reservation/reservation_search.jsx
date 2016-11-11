@@ -61,7 +61,7 @@ class ReservationSearch extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="reservation-flex-container">
         <div className="reservation-search">
           <div className="reservation-search-party">
             <select onChange={this.update('party_size')}>

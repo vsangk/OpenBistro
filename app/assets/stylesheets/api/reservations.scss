@@ -2,6 +2,54 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.reservation-flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 40px;
+}
+
 .reservation-search {
   display: inline-flex;
+
+  select, button {
+    height: 40px;
+    width: 150px;
+  }
+
+  input {
+    height: 36px;
+    width: 200px;
+  }
+}
+
+.reservation-buttons {
+  width: 750px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.reservation-buttons button {
+  min-width: 110px;
+  min-height: 36px;
+  color: white;
+  border-radius: 4px;
+}
+
+.time-slot-active {
+  background-color: #4e6780;
+}
+
+.time-slot-inactive {
+  background-color: #aaa;
+  border-color: #aaa;
+}
+
+.time-slot-inactive:active {
+
 }

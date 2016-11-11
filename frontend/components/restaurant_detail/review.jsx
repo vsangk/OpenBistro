@@ -35,7 +35,7 @@ const Review = ({ review, deleteReview, currentUser }) => {
       <div className="review-rating">
         <ul>
           <li className="review-stars">{starRating(review.rating * 20)}</li>
-          <li>Reviewed by: {review.username}</li>
+          { review.username ? <li>Reviewed by: {review.username}</li> : <div/>}
         </ul>
       </div>
       <div className="review-body">
