@@ -7,7 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 guest_login = User.create(username: "guest", password: "password")
-test_login = User.create(username: "vince", password: "password")
+User.create(username: "vince", password: "password")
+User.create(username: "user1", password: "password")
+User.create(username: "user2", password: "password")
+User.create(username: "user3", password: "password")
+User.create(username: "user4", password: "password")
 
 City.create(name: "San Francisco", image_url: "https://res.cloudinary.com/openbistro/image/upload/v1478134303/Cities/city-sf_fheb0c.jpg")
 City.create(name: "New York Area", image_url: "https://res.cloudinary.com/openbistro/image/upload/v1478134301/Cities/city-ny_idkoqf.jpg")
@@ -39,7 +43,7 @@ Restaurant.create(name: "Barbuto", image_url: "https://s3-us-west-1.amazonaws.co
   category: "Italian", price: 3, address: "775 Washington Street", city_name: "New York", state: "NY", zip_code: "10014", neighborhood: "Meatpacking District", city_id: 2,
   description: "Barbuto is a casual Italian Eatery in the Meat Packing District featuring the seasonal green market cuisine of Jonathan Waxman. We accept reservations for parties of three or more and all parties of two are accommodated on a walk-in basis.",
   detail_image_url: ["https://s3-us-west-1.amazonaws.com/openbistro/restaurant-detail/barbuto-1.jpg", "https://s3-us-west-1.amazonaws.com/openbistro/restaurant-detail/barbuto-2.jpg", "https://s3-us-west-1.amazonaws.com/openbistro/restaurant-detail/barbuto-3.jpg"])
-Restaurant.create(name: "Dirty Candy", image_url: "https://s3-us-west-1.amazonaws.com/openbistro/restaurant-detail/dirt-home.jpg",
+Restaurant.create(name: "Dirt Candy", image_url: "https://s3-us-west-1.amazonaws.com/openbistro/restaurant-detail/dirt-home.jpg",
   category: "American", price: 3, address: "86 Allen Street", city_name: "New York", state: "NY", zip_code: "10002", neighborhood: "East Village", city_id: 2,
   description: "Cutting edge vegetarian food with added flavor and no politics in this sleek and stylish restaurant showcasing colorful, pop-tastic dishes from award-winning chef, Amanda Cohen. A full bar, counter seating, a wine list of cult favorites from around the world, two stars from the New York Times, and vegetables presented in all their earth-shattering, gob-smacking glory.",
   detail_image_url: ["https://s3-us-west-1.amazonaws.com/openbistro/restaurant-detail/dirt-1.jpg", "https://s3-us-west-1.amazonaws.com/openbistro/restaurant-detail/dirt-2.jpg", "https://s3-us-west-1.amazonaws.com/openbistro/restaurant-detail/dirt-3.jpg"])
@@ -103,3 +107,37 @@ Restaurant.create(name: "Girl & the Goat", image_url: "https://s3-us-west-1.amaz
   category: "American", price: 2, address: "809 W Randolph", city_name: "Chicago", state: "IL", zip_code: "60607", neighborhood: "West Loop", city_id: 6,
   description: "Girl & the Goat opened in 2010 with the goal of serving a family style menu of tasty, bold flavored foods in a fun and lively setting. To enhance the experience we offer a selection of wines from around the world with a focus on small producers, a rotating list of craft beers, and a list of fun cocktails created by our bartenders.",
   detail_image_url: ["https://s3-us-west-1.amazonaws.com/openbistro/restaurant-detail/goat-1.jpg", "https://s3-us-west-1.amazonaws.com/openbistro/restaurant-detail/goat-2.jpg", "https://s3-us-west-1.amazonaws.com/openbistro/restaurant-detail/goat-3.jpg"])
+
+
+#Reviews
+Review.create(restaurant_id: 1, body: "One of the best brunch meals I've had in a long time! Great food. Option to eat outside (quieter and nice on a sunny day with great views of the Bay Bridge).",
+  user_id: 2, rating: 5)
+Review.create(restaurant_id: 1, body: "Excellent fresh seafood, excellent service; and we are picky. Beautiful views of the bay bridge, had a magical night. Noisy though",
+  user_id: 3, rating: 5)
+Review.create(restaurant_id: 1, body: "This was a great find! We invited friends who were visiting San Francisco from the mid west and wanted to take them somewhere special. Waterbar was the place. They LOVED the view, the ambiance and the food -and so did we.",
+    user_id: 1, rating: 4)
+Review.create(restaurant_id: 1, body: "We left Waterbar with lighter wallets yet unsatisfied palates, and walked next door to Epic, which offered better views, tastier food, friendlier service, less frenzy and lower prices.",
+  user_id: 4, rating: 2)
+
+Review.create(restaurant_id: 2, body: "The fish were flown in from Japan that morning as well as local ones. Quite a variety were available. A very enjoyable evening. It is expensive.",
+  user_id: 4, rating: 4)
+Review.create(restaurant_id: 2, body: "Omakase was incredible. Just tell them your price and let them do the work, you won't regret it.",
+  user_id: 2, rating: 5)
+Review.create(restaurant_id: 2, body: "Delicious food, excellent service (especially at the chef's counter), but a little overpriced. Still, one of the better sushi experiences I have had, and the quality of the food was top notch.",
+  user_id: 3, rating: 4)
+
+Review.create(restaurant_id: 3, body: "They charge too much. The food was good but not worth the price. Also, their wine by the glass is around $15/glass. Way too high",
+  user_id: 4, rating: 2)
+Review.create(restaurant_id: 3, body: "Always one of my favorites , food is innovative and always the freshest available. Great Chef and service. Go for the sunsets on the west coast....",
+  user_id: 3, rating: 5)
+Review.create(restaurant_id: 3, body: "The wonderful view at River's End makes the food seem secondary. But I wouldn't love dining there if wasn't really good. The seafood is always very fresh and delicious and the service is good. Add that million dollar view and you have a real winner!",
+  user_id: 5, rating: 4)
+
+Review.create(restaurant_id: 4, body: "Went here for brunch. The sun was out, the margaritas flowed, the food was good (especially the donuts). Really enjoyed it and will definitely be back.",
+  user_id: 2, rating: 5)
+Review.create(restaurant_id: 4, body: "Great rooftop dining. The views & atmosphere were amazing. Food was incredible and promptly served. Suggested for a weekend trip stop and it did not disappoint. The one draw back - tables for 2 are very small, it was hard to fit everything on one surface. Other than that I highly recommend.",
+  user_id: 4, rating: 5)
+Review.create(restaurant_id: 4, body: "Amazing food and sangria! Great staff and perfect views",
+  user_id: 5, rating: 5)
+Review.create(restaurant_id: 4, body: "Great outdoor dining in SF, great food and cocktails. The view along with the amazing service just add to the delightful ambiance, to be one of my favorite restaurants to have brunch or afternoon cocktails and appies. I make all sorts of excuses to dine at this fine establishment.",
+  user_id: 3, rating: 4)

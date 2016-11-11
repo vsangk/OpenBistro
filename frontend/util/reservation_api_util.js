@@ -26,3 +26,12 @@ export const deleteReservation = (id, success, error) => {
     error
   });
 };
+
+export const fetchTimes = (reservation, success) => {
+  $.ajax({
+    url: "api/reservations",
+    type: "GET",
+    data: { reservation },
+    success,
+  });
+};

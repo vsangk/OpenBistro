@@ -78,8 +78,6 @@ ${cityName}, ${state} ${zipCode}`;
   }
 
   render() {
-    console.log(this.props.restaurantId);
-
     let restaurantImageStyle = {
       backgroundImage: `url(${this.props.restaurantDetail.image_url})`
     };
@@ -98,7 +96,9 @@ ${cityName}, ${state} ${zipCode}`;
             <ReservationSearch
               createReservation={this.props.createReservation}
               currentUserId={this.props.currentUser.id}
-              restaurantId={this.props.restaurantDetail.id}/>
+              restaurantId={this.props.restaurantId}
+              availableTimes={this.props.restaurantDetail.available_times}
+              fetchTimes={this.props.fetchTimes}/>
           </div>
           <div className="detail-main-about content-block">
             <h3>About {this.props.restaurantDetail.name}</h3>

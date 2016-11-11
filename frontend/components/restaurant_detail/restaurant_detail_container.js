@@ -4,7 +4,8 @@ import {
   requestRestaurantDetail,
   clearReviews,
   deleteReview,
-  createReservation
+  createReservation,
+  fetchTimes
 } from '../../actions/restaurant_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -28,7 +29,8 @@ const mapDispatchToProps = dispatch => ({
   ),
   clearReviews: () => dispatch(clearReviews()),
   deleteReview: reviewId => dispatch(deleteReview(reviewId)),
-  createReservation: reservation => dispatch(createReservation(reservation))
+  createReservation: reservation => dispatch(createReservation(reservation)),
+  fetchTimes: reservation => dispatch(fetchTimes(reservation))
 });
 
 export default connect(

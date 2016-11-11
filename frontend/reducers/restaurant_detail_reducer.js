@@ -4,12 +4,14 @@ import {
   removeReview,
   REMOVE_REVIEW,
   clearReviews,
-  CLEAR_REVIEWS
+  CLEAR_REVIEWS,
+  RECEIVE_TIME_SLOT
 } from '../actions/restaurant_actions';
 import merge from 'lodash/merge';
 
 const _defaultState = {
   address: '',
+  available_times: {},
   category: '',
   city_name: '',
   description: '',
@@ -41,6 +43,12 @@ const RestaurantDetailReducer = (state = _defaultState, action) => {
     case CLEAR_REVIEWS:
       newState = merge({}, state);
       newState.reviews = {};
+      return newState;
+
+    case RECEIVE_TIME_SLOT:
+      debugger;
+      newState = merge({}, state);
+      newState.available_times[action.timeSlot] = false;
       return newState;
 
     default:

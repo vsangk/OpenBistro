@@ -4,6 +4,7 @@ import {
   receiveRestaurantDetail,
   requestRestaurantDetail,
   removeReview,
+  receiveTimeSlot,
   REQUEST_ALL_RESTAURANTS,
   REQUEST_RESTAURANT_DETAIL,
   CREATE_REVIEW,
@@ -11,7 +12,8 @@ import {
   DELETE_REVIEW,
   CREATE_RESERVATION,
   UPDATE_RESERVATION,
-  DELETE_RESERVATION
+  DELETE_RESERVATION,
+  FETCH_TIMES,
   } from '../actions/restaurant_actions';
 
 import {
@@ -28,7 +30,8 @@ import {
 import {
   createReservation,
   updateReservation,
-  deleteReservation
+  deleteReservation,
+  fetchTimes
 } from '../util/reservation_api_util';
 
 export default ({ dispatch }) => next => action => {
@@ -42,6 +45,9 @@ export default ({ dispatch }) => next => action => {
     dispatch(removeReview(restaurantDetail.reviews));
     delete restaurantDetail.reviews;
     dispatch(receiveRestaurantDetail(restaurantDetail));
+  };
+  const reservationSuccess = timeSlot => {
+    dispatch(receiveTimeSlot(timeSlot));
   };
 
   switch (action.type) {
@@ -66,7 +72,7 @@ export default ({ dispatch }) => next => action => {
       return next(action);
 
     case CREATE_RESERVATION:
-      createReservation(action.reservation, fetchDetailSuccess);
+      createReservation(action.reservation, reservationSuccess);
       return next(action);
 
     case UPDATE_RESERVATION:
@@ -75,6 +81,10 @@ export default ({ dispatch }) => next => action => {
 
     case DELETE_RESERVATION:
       deleteReservation(action.id, fetchDetailSuccess);
+      return next(action);
+
+    case FETCH_TIMES:
+      fetchTimes(action.reservation, fetchDetailSuccess);
       return next(action);
 
     default:
