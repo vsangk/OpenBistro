@@ -3,6 +3,18 @@ export const CREATE_REVIEW = 'CREATE_REVIEW';
 export const UPDATE_REVIEW = 'UPDATE_REVIEW';
 export const DELETE_REVIEW = 'DELETE_REVIEW';
 export const CLEAR_REVIEWS = 'CLEAR_REVIEWS';
+export const REQUEST_ALL_REVIEWS = "REQUEST_ALL_REVIEWS";
+export const RECEIVE_ALL_REVIEWS = "RECEIVE_ALL_REVIEWS";
+
+
+export const requestAllReviews = () => ({
+  type: REQUEST_ALL_REVIEWS
+});
+
+export const receiveAllReviews = reviews => ({
+  type: RECEIVE_ALL_REVIEWS,
+  reviews
+});
 
 export const removeReview = review => ({
   type: REMOVE_REVIEW,

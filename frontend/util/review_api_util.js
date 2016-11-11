@@ -1,3 +1,11 @@
+export const fetchAllReviews = (success) => {
+  $.ajax({
+    url: "api/reviews",
+    type: "GET",
+    success
+  });
+};
+
 export const createReview = (review, success, error) => {
   $.ajax({
     url: "api/reviews",

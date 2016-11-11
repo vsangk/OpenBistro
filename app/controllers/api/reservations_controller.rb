@@ -12,19 +12,23 @@ class Api::ReservationsController < ApplicationController
   end
 
   def index
-    # Test
-    restaurant = Restaurant.find(params[:reservation][:restaurant_id])
-    reservations = restaurant.reservations
-    @available_times = { 5 => true, 6 => true, 7 => true, 8 => true, 9 => true }
+    if params[:reservation]
+      # Refactor with query
+      restaurant = Restaurant.find(params[:reservation][:restaurant_id])
+      reservations = restaurant.reservations
+      @available_times = { 5 => true, 6 => true, 7 => true, 8 => true, 9 => true }
 
-    reservations.each do |reservation|
-      if Date.parse(params[:reservation][:date_slot]) == reservation.date_slot
-        @available_times[reservation.time_slot] = false
+      reservations.each do |reservation|
+        if Date.parse(params[:reservation][:date_slot]) == reservation.date_slot
+          @available_times[reservation.time_slot] = false
+        end
       end
+      render json: { "available_times" => @available_times }
+    else
+      @reservations = Reservation.where("user_id = #{current_user.id}")
+      render :index
     end
-    # Test
 
-    render json: { "available_times" => @available_times }
   end
 
   def update

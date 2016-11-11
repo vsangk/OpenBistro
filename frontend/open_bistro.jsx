@@ -5,11 +5,8 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 // testing
-import {
-  createReservation,
-  updateReservation,
-  deleteReservation
-} from './actions/restaurant_actions';
+import { requestAllReviews } from './actions/review_actions';
+import { requestAllReservations } from './actions/reservation_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -22,10 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // testing
   window.store = store;
-  window.createReservation = createReservation;
-  window.updateReservation = updateReservation;
-  window.deleteReservation = deleteReservation;
-  window.reservation = {party_size: 3, time_slot: 8, date_slot: "2016-12-28", user_id: 1, restaurant_id: 1};
+  window.requestAllReviews = requestAllReviews;
+  window.requestAllReservations = requestAllReservations;
 
   const root = document.getElementById('root');
   Modal.setAppElement(document.body);

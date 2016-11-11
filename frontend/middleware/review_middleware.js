@@ -1,14 +1,17 @@
 import {
   removeReview,
+  receiveAllReviews,
   CREATE_REVIEW,
   UPDATE_REVIEW,
-  DELETE_REVIEW
+  DELETE_REVIEW,
+  REQUEST_ALL_REVIEWS
 } from '../actions/review_actions';
 
 import {
   createReview,
   updateReview,
-  deleteReview
+  deleteReview,
+  fetchAllReviews
 } from '../util/review_api_util';
 
 import { receiveRestaurantDetail } from '../actions/restaurant_actions';
@@ -25,6 +28,10 @@ export default ({ dispatch }) => next => action => {
     dispatch(receiveRestaurantDetail(restaurantDetail));
   };
 
+  const fetchAllSuccess = restaurants => (
+    dispatch(receiveAllReviews(restaurants))
+  );
+
   switch (action.type) {
     case CREATE_REVIEW:
       createReview(action.review, fetchDetailSuccess);
@@ -36,6 +43,10 @@ export default ({ dispatch }) => next => action => {
 
     case DELETE_REVIEW:
       deleteReview(action.id, deleteReviewSuccess);
+      return next(action);
+
+    case REQUEST_ALL_REVIEWS:
+      fetchAllReviews(fetchAllSuccess);
       return next(action);
 
     default:

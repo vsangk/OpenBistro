@@ -12,6 +12,7 @@ const sessionLinks = () => (
 const greeting = (currentUser, logout) => (
   <div className="header-nav">
     Hi, {currentUser.username}!
+    <Link to="/profile">Your Profile</Link>
     <button onClick={logout}>Log Out</button>
   </div>
 );

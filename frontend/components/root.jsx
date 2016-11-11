@@ -6,9 +6,10 @@ import { receiveErrors } from  '../actions/session_actions';
 
 import SessionFormContainer from './session_form/session_form_container';
 import HeaderContainer from './header/header_container';
-import HomeContainer from './home/home_container';
+import Home from './home/home';
 import RestaurantIndexContainer from './restaurant_index/restaurant_index_container';
 import RestaurantDetailContainer from './restaurant_detail/restaurant_detail_container';
+import ProfileContainer from './profile/profile_container';
 
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -23,9 +24,10 @@ const Root = ({ store }) => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App}>
-          <IndexRoute component={HomeContainer} />
+          <IndexRoute component={Home} />
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
+          <Route path="/profile" component={ProfileContainer}/>
           <Route path="/city/:cityId" component={RestaurantIndexContainer} />
           <Route path="/restaurant/:restaurantId" component={RestaurantDetailContainer} />
         </Route>

@@ -1,3 +1,11 @@
+export const fetchAllReservations = (success) => {
+  $.ajax({
+    url: "api/reservations",
+    type: "GET",
+    success,
+  });
+};
+
 export const createReservation = (reservation, success, error) => {
   $.ajax({
     url: "api/reservations",
