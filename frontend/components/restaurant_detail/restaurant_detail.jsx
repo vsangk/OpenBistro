@@ -119,8 +119,7 @@ ${cityName}, ${state} ${zipCode}`;
             {this.props.currentUser.id === -1 ? <div/> :
               <CreateReviewModalContainer
                 restaurantId={this.props.restaurantDetail.id}
-                currentUserId={this.props.currentUser.id}
-                />
+                currentUserId={this.props.currentUser.id}/>
             }
             <div className="review-container">
               {this.props.reviews.map(review => (

@@ -2,7 +2,7 @@ import React from 'react';
 import UpdateReviewModalContainer from '../review_modals/update_review_modal_container';
 import { starRating } from '../misc/stars';
 
-const Review = ({ review, deleteReview, currentUser, restaurantId }) => {
+const Review = ({ review, deleteReview, currentUser }) => {
   const links = () => {
     if (review.user_id === currentUser.id) {
       let handleDelete = id => {
@@ -15,7 +15,7 @@ const Review = ({ review, deleteReview, currentUser, restaurantId }) => {
         <div>
           <ul>
             <li><UpdateReviewModalContainer
-              restaurantId={restaurantId}
+              restaurantId={review.restaurant_id}
               currentUserId={currentUser.id}
               review={review}
               />
