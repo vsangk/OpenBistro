@@ -7,11 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 guest_login = User.create(username: "guest", password: "password")
-User.create(username: "user1", password: "password")
-User.create(username: "user2", password: "password")
-User.create(username: "user3", password: "password")
-User.create(username: "user4", password: "password")
-User.create(username: "user5", password: "password")
+User.create(username: "Tom", password: "password")
+User.create(username: "Jonathan", password: "password")
+User.create(username: "Sam", password: "password")
+User.create(username: "Michael", password: "password")
+User.create(username: "Jeffrey", password: "password")
 User.create(username: "vince", password: "password")
 
 City.create(name: "San Francisco", image_url: "https://res.cloudinary.com/openbistro/image/upload/v1478134303/Cities/city-sf_fheb0c.jpg")

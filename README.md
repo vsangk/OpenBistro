@@ -1,7 +1,7 @@
 # OpenBistro
 
 [OpenBistro][openbistro]
-[openbistro]: https://openbistro.site/
+[openbistro]: http://www.openbistro.site/
 
 OpenBistro is a restaurant review and reservation website with an intuitive,
 snappy, and responsive UI based off single-page application principles. OpenBistro
