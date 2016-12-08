@@ -15,15 +15,12 @@ export const modalStyle = {
   content : {
     minWidth        : '500px',
     position        : 'initial',
+    border          : 'none',
     top             : '0',
     left            : '0',
     right           : '0',
     bottom          : '0',
-    border          : '1px solid #ccc',
-    padding         : '20px',
-    display         : 'flex',
-    justifyContent  : 'center',
-    alignItems      : 'center',
+    padding         : '0',
     zIndex          : 3,
   }
 };
