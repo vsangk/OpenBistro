@@ -5,7 +5,7 @@
 .restaurant-flex-container {
   display: flex;
   justify-content: center;
-  max-width: 1200px;
+  max-width: 85%;
   margin: auto;
 }
 
@@ -40,7 +40,7 @@
   flex: 1;
   font-size: 14px;
   box-sizing: border-box;
-  margin: 0 20px;
+  margin: -10px 20px;
 
 
   ul {
@@ -58,10 +58,6 @@
 }
 
 .riic-time-slots {
-  ul {
-    margin-top: 10px;
-  }
-
   button {
     color: #fff;
     background-color: #4e6780;

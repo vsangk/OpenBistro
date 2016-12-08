@@ -44,6 +44,7 @@ const RestaurantIndexItem = ({ restaurant, avgRating, totalReviews }) => {
             </ul>
           </div>
           <div className="riic-time-slots">
+            <div style={{marginTop: '6px'}}>Available Time Slots for Today:</div>
             <ul>{timeSlotButtons()}</ul>
           </div>
         </div>
