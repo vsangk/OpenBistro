@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+
 const sessionLinks = () => (
   <div className="header-nav">
     <Link to="/login">Log In</Link>
@@ -11,11 +12,38 @@ const sessionLinks = () => (
 
 const greeting = (currentUser, logout) => (
   <div className="header-nav">
-    <span>Hi, {currentUser.username}!</span>
-    <Link to="/profile">Profile</Link>
-    <button onClick={logout}>Log Out</button>
+    <div className="dropdown">
+      <a onClick={dropDown} className="dropdown-button">
+        Hi, {currentUser.username}! ▾
+      </a>
+      <div id="myDropdown" className="dropdown-content">
+        <Link to="/profile">Profile</Link>
+        <a onClick={logout}>Log Out</a>
+      </div>
+    </div>
   </div>
 );
+
+const dropDown = () => {
+  let menu = document.getElementById("myDropdown");
+  if (menu) {
+    menu.classList.toggle("show");
+  }
+};
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropdown-button')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+};
 
 const Home = ({ currentUser, logout }) => (
   <header className="header">

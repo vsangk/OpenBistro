@@ -67,13 +67,49 @@
   padding: 6px;
 }
 
-.header-nav > a {
-  padding: 10px;
+.header-nav a {
+  padding: 22px;
+  cursor: pointer;
 }
 
-.header-nav button {
-  margin-left: 10px;
+.header-nav a:hover {background-color: rgba(0,0,0,0.2)}
+
+.dropdown-button {
+  color: white;
+  padding: 22px;
+  border: none;
+  cursor: pointer;
 }
+
+.dropdown-button:hover, .dropdown-button:focus {
+  background-color: rgba(0,0,0,0.4);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  top: 42px;
+  right: 0;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.show {display:block;}
 
 .home-bg-image {
   background-image: url(https://res.cloudinary.com/openbistro/image/upload/c_scale,w_1301/v1478211250/root-splash_es6ddq.jpg);
