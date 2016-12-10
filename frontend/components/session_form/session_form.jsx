@@ -73,8 +73,12 @@ class SessionForm extends React.Component {
 
     return (
       <div className="auth-form-bg">
+        <div className="auth-form-welcome">
+          <h1>Welcome to OpenBistro</h1>
+          <h2>The place for restaurant reviews and reservations.</h2>
+        </div>
         <div className="auth-form">
-          <h2>{headerText}</h2>
+          <h3>{headerText}</h3>
           {this.renderErrors()}
           <form onSubmit={this.handleSubmit}>
             <input type="text"

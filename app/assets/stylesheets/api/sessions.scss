@@ -2,16 +2,39 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .auth-form-bg {
-  background-image: url(https://res.cloudinary.com/openbistro/image/upload/v1481393027/splash-login-2_dsdpxc.jpg);
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url(http://res.cloudinary.com/openbistro/image/upload/v1481393027/splash-login-2_dsdpxc.jpg);
+
   background-size: cover;
-  width: 100vw;
-  height: 93.3vh;
+  background-position: 50%;
+  height: 100vh;
   position: relative;
+}
+
+.auth-form-welcome {
+  padding: 50px 60px;
+
+  h1 {
+    font-weight: 600;
+    font-size: 42px;
+    color: #fff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+
+  h2 {
+    color: #fff;
+    font-size: 28px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
 }
 
 .auth-form {
     position: absolute;
-    top: 15%;
+    top: 20%;
     left: 36%;
     box-sizing: border-box;
     width: 500px;
@@ -22,7 +45,7 @@
     -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
 }
 
-.auth-form h2{
+.auth-form h3{
     background: #2c3e50;
     text-transform: uppercase;
     color: #FFF;
@@ -52,11 +75,8 @@
 
 .auth-form button,
 .auth-form input[type="submit"] {
-    -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
-    -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
-    box-shadow: inset 0px 1px 0px 0px #45D6D6;
-    background-color: #2CBBBB;
-    border: 1px solid #27A0A0;
+    background-color: #559e9e;
+    border: none;
     display: inline-block;
     cursor: pointer;
     color: #FFFFFF;

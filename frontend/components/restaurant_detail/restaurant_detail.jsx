@@ -92,7 +92,7 @@ ${cityName}, ${state} ${zipCode}`;
 
         <div className="detail-main">
           <div className="detail-main-reservation content-block">
-            <h3>Make a reservation</h3>
+            <h2>Make a reservation</h2>
             <ReservationSearch
               createReservation={this.props.createReservation}
               currentUserId={this.props.currentUser.id}
@@ -101,7 +101,7 @@ ${cityName}, ${state} ${zipCode}`;
               fetchTimes={this.props.fetchTimes}/>
           </div>
           <div className="detail-main-about content-block">
-            <h3>About {this.props.restaurantDetail.name}</h3>
+            <h2>About {this.props.restaurantDetail.name}</h2>
             <div className="map-container">
               <DetailsMap address={this.getAddress('lineBreak')} />
               <div className="map-address">{this.getAddress()}</div>
@@ -109,13 +109,13 @@ ${cityName}, ${state} ${zipCode}`;
             <p>{this.props.restaurantDetail.description}</p>
           </div>
           <div className="detail-main-photos content-block">
-            <h3>Restaurant Photos</h3>
+            <h2>Restaurant Photos</h2>
             <div className="detail-photos-container">
               {this.getDetailImages()}
             </div>
           </div>
           <div className="detail-main-reviews content-block">
-            <h3>{this.props.restaurantDetail.name} Ratings and Reviews</h3>
+            <h2>{this.props.restaurantDetail.name} Ratings and Reviews</h2>
             {this.props.currentUser.id === -1 ? <div/> :
               <CreateReviewModalContainer
                 restaurantId={this.props.restaurantDetail.id}

@@ -14,20 +14,27 @@ import ProfileContainer from './profile/profile_container';
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
     store.dispatch(receiveErrors([]));
-    const currentUser = store.getState().session.currentUser;
+    let currentUser = store.getState().session.currentUser;
     if (currentUser) {
       replace('/');
+    }
+  };
+
+  const _redirectIfLoggedOut = (nextState, replace) => {
+    let currentUser = store.getState().session.currentUser;
+    if (currentUser === null) {
+      replace('/login');
     }
   };
 
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
-        <Route path="/" component={App}>
+        <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
+        <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
+        <Route path="/" component={App} onEnter={_redirectIfLoggedOut}>
           <IndexRoute component={Home} />
-          <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
-          <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
-          <Route path="/profile" component={ProfileContainer}/>
+          <Route path="/profile" component={ProfileContainer} />
           <Route path="/city/:cityId" component={RestaurantIndexContainer} />
           <Route path="/restaurant/:restaurantId" component={RestaurantDetailContainer} />
         </Route>

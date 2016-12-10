@@ -16,7 +16,7 @@
 
 /* CSS Reset */
 
- html, head, body, header, nav, h1, a, ul, li, main,
+ html, head, body, header, nav, h1, h2, h3, h4, a, ul, li, main,
  section, p, footer, small {
    margin: 0;
    padding: 0;
@@ -44,6 +44,11 @@
   font-size: 16px;
   font-weight: 400;
   background: #eee;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 24px;
 }
 
 /* Header and Navbar*/
