@@ -66,7 +66,8 @@ class ReservationSearch extends React.Component {
           <div className="reservation-search-date">
             <input type="date" name="dateSlot"
               onChange={this.update('date_slot')}
-              value={this.state.date_slot}/>
+              value={this.state.date_slot}
+              style={{fontFamily: 'Arial'}}/>
           </div>
           <div className="reservation-search-time">
             <select>

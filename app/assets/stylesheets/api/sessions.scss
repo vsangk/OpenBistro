@@ -1,11 +1,22 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.auth-form-bg {
+  background-image: url(https://res.cloudinary.com/openbistro/image/upload/v1481393027/splash-login-2_dsdpxc.jpg);
+  background-size: cover;
+  width: 100vw;
+  height: 93.3vh;
+  position: relative;
+}
+
 .auth-form {
+    position: absolute;
+    top: 15%;
+    left: 36%;
+    box-sizing: border-box;
     width: 500px;
     padding: 30px;
     background: #FFFFFF;
-    margin: 50px auto;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
     -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
     -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);

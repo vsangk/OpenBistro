@@ -72,28 +72,30 @@ class SessionForm extends React.Component {
     }
 
     return (
-      <div className="auth-form">
-        <h2>{headerText}</h2>
-        {this.renderErrors()}
-        <form onSubmit={this.handleSubmit}>
-          <input type="text"
-            placeholder="Username"
-            value={this.state.username}
-            onChange={this.update('username')}/><br/>
+      <div className="auth-form-bg">
+        <div className="auth-form">
+          <h2>{headerText}</h2>
+          {this.renderErrors()}
+          <form onSubmit={this.handleSubmit}>
+            <input type="text"
+              placeholder="Username"
+              value={this.state.username}
+              onChange={this.update('username')}/><br/>
 
-          <input type="password"
-            placeholder="Password"
-            value={this.state.password}
-            onChange={this.update('password')}/><br/>
+            <input type="password"
+              placeholder="Password"
+              value={this.state.password}
+              onChange={this.update('password')}/><br/>
 
-          <input type="submit" value={headerText} />&nbsp;
-        </form><br/>
+            <input type="submit" value={headerText} />&nbsp;
+            </form><br/>
 
-        <button onClick={this.handleGuestSignIn}>Sign In As Guest</button>
-        <div className="auth-form-prompt">
-          {promptText}&nbsp;
-          <Link to={url}>{linkText}</Link>
-        </div>
+            <button onClick={this.handleGuestSignIn}>Sign In As Guest</button>
+            <div className="auth-form-prompt">
+              {promptText}&nbsp;
+              <Link to={url}>{linkText}</Link>
+            </div>
+          </div>
       </div>
     );
   }

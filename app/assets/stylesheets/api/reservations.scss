@@ -17,14 +17,37 @@
   display: inline-flex;
 
   select, button {
-    height: 40px;
-    width: 150px;
+    height: 50px;
+    width: 160px;
+  }
+
+  button {
+    -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+    box-shadow: inset 0px 1px 0px 0px #45D6D6;
+    background-color: #2CBBBB;
+    border: 1px solid #27A0A0;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 8px 18px;
+    width: 240px;
+  }
+
+  select {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
   }
 
   input {
-    height: 36px;
+    height: 46px;
     width: 200px;
   }
+
 }
 
 .reservation-button-container {
