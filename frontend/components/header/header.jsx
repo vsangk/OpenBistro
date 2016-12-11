@@ -18,7 +18,7 @@ const greeting = (currentUser, logout) => (
       </a>
       <div id="myDropdown" className="dropdown-content">
         <Link to="/profile">Profile</Link>
-        <a onClick={logout}>Log Out</a>
+        <Link to="/login" onClick={logout}>Log Out</Link>
       </div>
     </div>
   </div>
@@ -45,11 +45,11 @@ window.onclick = function(event) {
   }
 };
 
-const Home = ({ currentUser, logout }) => (
+const Header = ({ currentUser, logout }) => (
   <header className="header">
     <Link className="logo" to={"/"}>OpenBistro</Link>
     {currentUser ? greeting(currentUser, logout) : sessionLinks()}
   </header>
 );
 
-export default Home;
+export default Header;
