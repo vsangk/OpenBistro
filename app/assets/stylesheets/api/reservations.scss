@@ -19,6 +19,7 @@
   select, button {
     height: 50px;
     width: 200px;
+    font-size: 14px;
   }
 
   button {
@@ -27,7 +28,6 @@
     display: inline-block;
     cursor: pointer;
     color: #FFFFFF;
-    font-size: 14px;
     padding: 8px 18px;
     width: 240px;
   }
@@ -43,6 +43,8 @@
   input {
     height: 46px;
     width: 220px;
+    font-size: 14px;
+    padding: 0 10px;
   }
 
 }

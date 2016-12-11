@@ -117,7 +117,12 @@ h2 {
 .show {display:block;}
 
 .home-bg-image {
-  background-image: url(https://res.cloudinary.com/openbistro/image/upload/c_scale,w_1301/v1478211250/root-splash_es6ddq.jpg);
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url(https://res.cloudinary.com/openbistro/image/upload/c_scale,w_1301/v1478211250/root-splash_es6ddq.jpg);
   height: 350px;
   background-size: cover;
 }
