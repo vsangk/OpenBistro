@@ -62,19 +62,14 @@
 }
 
 .riic-time-slots {
-  button {
-    color: #fff;
-    background-color: #4e6780;
-    border-color: #56627b;
-    border-radius: 3px;
-    box-sizing: border-box;
-    padding: 10px 30px;
-    cursor: pointer;
-    min-width: 110px;
+  margin-top: 6px;
+
+  p {
+    margin-bottom: 4px;
   }
 
-  button:focus {
-    outline: none;
+  div {
+    margin: 0 14px;
   }
 }
 

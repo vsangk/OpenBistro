@@ -1,19 +1,11 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import { starRating } from '../misc/stars';
+import { dateToday } from '../misc/today';
+import ReservationBooker from '../reservation/reservation_booker';
 
-const RestaurantIndexItem = ({ restaurant, avgRating, totalReviews }) => {
+const RestaurantIndexItem = ({ restaurant, avgRating, totalReviews, createReservation, availableToday }) => {
   let restaurantStyle = {backgroundImage: `url(${restaurant.image_url})`};
-
-  const timeSlotButtons = () => {
-    let timeSlots = ['5:00', '6:00', '7:00', '8:00', '9:00'];
-    timeSlots = timeSlots.map((timeSlot, idx) => (
-      <li key={idx}>
-        <button>{timeSlot} PM</button>
-      </li>
-    ));
-    return timeSlots;
-  };
 
   const greyDollars = () => {
     let greyDollarSigns = `$`.repeat(4 - restaurant.price);
@@ -44,8 +36,12 @@ const RestaurantIndexItem = ({ restaurant, avgRating, totalReviews }) => {
             </ul>
           </div>
           <div className="riic-time-slots">
-            <div style={{marginTop: '6px'}}>Available Time Slots for Today:</div>
-            <ul>{timeSlotButtons()}</ul>
+            <ReservationBooker
+              createReservation={createReservation}
+              restaurantId={restaurant.id}
+              dateSlot={dateToday()}
+              availableTimes={availableToday}
+              partySize="2"/>
           </div>
         </div>
     </div>

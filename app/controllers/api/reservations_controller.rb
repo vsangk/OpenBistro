@@ -5,7 +5,7 @@ class Api::ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
 
     if @reservation.save
-      render text: @reservation.time_slot
+      render :create
     else
       render json: @reservation.errors.full_messages, status: 422
     end
@@ -13,22 +13,19 @@ class Api::ReservationsController < ApplicationController
 
   def index
     if params[:reservation]
-      # Refactor with query
-      restaurant = Restaurant.find(params[:reservation][:restaurant_id])
-      reservations = restaurant.reservations
+      reservations = Reservation.where("restaurant_id = ? AND date_slot = ?",
+        params[:reservation][:restaurant_id], params[:reservation][:date_slot])
+
       @available_times = { 5 => true, 6 => true, 7 => true, 8 => true, 9 => true }
 
       reservations.each do |reservation|
-        if Date.parse(params[:reservation][:date_slot]) == reservation.date_slot
-          @available_times[reservation.time_slot] = false
-        end
+        @available_times[reservation.time_slot] = false
       end
       render json: { "available_times" => @available_times }
     else
-      @reservations = Reservation.where("user_id = #{current_user.id}")
+      @reservations = Reservation.where("user_id = ?", current_user.id)
       render :index
     end
-
   end
 
   def update
@@ -53,6 +50,7 @@ class Api::ReservationsController < ApplicationController
 
   def reservation_params
     params[:reservation][:date_slot] = Date.parse(params[:reservation][:date_slot])
+    params[:reservation][:user_id] = current_user.id
     params.require(:reservation).permit(:party_size, :time_slot, :date_slot, :user_id, :restaurant_id)
   end
 end

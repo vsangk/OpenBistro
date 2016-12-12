@@ -1,5 +1,5 @@
 import {
-  receiveTimeSlot,
+  receiveReservationTime,
   receiveAllReservations,
   removeReservation,
   CREATE_RESERVATION,
@@ -25,8 +25,8 @@ export default ({ dispatch }) => next => action => {
     dispatch(receiveRestaurantDetail(restaurantDetail))
   );
 
-  const reservationSuccess = timeSlot => (
-    dispatch(receiveTimeSlot(timeSlot))
+  const reservationSuccess = timeDetails => (
+    dispatch(receiveReservationTime(timeDetails))
   );
 
   const fetchAllSuccess = reservations => (

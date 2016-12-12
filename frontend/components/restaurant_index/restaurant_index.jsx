@@ -18,7 +18,9 @@ class RestaurantIndex extends React.Component {
             <RestaurantIndexItem key={restaurant.id}
               restaurant={restaurant}
               avgRating={restaurant.avg_rating}
-              totalReviews={restaurant.total_reviews}/>
+              totalReviews={restaurant.total_reviews}
+              createReservation={this.props.createReservation}
+              availableToday={restaurant.available_today}/>
           ))}
         </div>
       </div>

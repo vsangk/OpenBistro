@@ -2,7 +2,6 @@ json.extract! @restaurant, :id, :name, :image_url, :category, :price, :address,
   :city_name, :neighborhood, :state, :zip_code, :description, :detail_image_url
 json.total_reviews @reviews.length
 json.avg_rating @avg_rating
-json.available_times @available_times
 
 json.set! :reviews do
   @reviews.each do |review|

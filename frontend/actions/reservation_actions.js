@@ -41,7 +41,7 @@ export const fetchTimes = reservation => ({
   reservation
 });
 
-export const receiveTimeSlot = timeSlot => ({
+export const receiveReservationTime = timeDetails => ({
   type: RECEIVE_TIME_SLOT,
-  timeSlot
+  timeDetails
 });

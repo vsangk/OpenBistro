@@ -1,28 +1,14 @@
 import React from 'react';
 import ReservationBooker from './reservation_booker';
+import { dateToday } from '../misc/today';
 
 class ReservationSearch extends React.Component {
   constructor(props) {
     super(props);
 
-    let today = new Date();
-    let dd = today.getDate();
-    let mm = today.getMonth()+1; //January is 0!
-    let yyyy = today.getFullYear();
-
-    if (dd < 10) {
-        dd = `0${dd}`;
-    }
-
-    if (mm < 10) {
-        mm = `0${mm}`;
-    }
-
-    today = `${yyyy}-${mm}-${dd}`;
-
     this.state = {
       party_size: 2,
-      date_slot: today,
+      date_slot: dateToday(),
       restaurant_id: this.props.restaurantId,
       hideBooker: true
     };

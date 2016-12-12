@@ -1,15 +1,15 @@
 import RestaurantIndex from './restaurant_index';
 import { connect } from 'react-redux';
 import { requestAllRestaurants } from '../../actions/restaurant_actions';
+import { createReservation } from '../../actions/reservation_actions';
 
-const mapStateToProps = ({ restaurants, total_reviews, avg_rating }) => ({
+const mapStateToProps = ({ restaurants }) => ({
   restaurants: Object.keys(restaurants).map(key => restaurants[key]),
-  totalReviews: total_reviews,
-  avgRating: avg_rating
 });
 
 const mapDispatchToProps = dispatch => ({
-  requestAllRestaurants: cityId => dispatch(requestAllRestaurants(cityId))
+  requestAllRestaurants: cityId => dispatch(requestAllRestaurants(cityId)),
+  createReservation: reservation => dispatch(createReservation(reservation))
 });
 
 export default connect(
