@@ -14,7 +14,6 @@ const RestaurantReducer = (state = {}, action) => {
       return merge({}, action.restaurants);
 
     case RECEIVE_TIME_SLOT:
-      debugger
       let newState = merge({}, state);
       newState[action.timeDetails.restaurant_id]['available_today'][action.timeDetails.time_slot] = false;
       return newState;

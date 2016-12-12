@@ -8,7 +8,6 @@ class ReservationBooker extends React.Component {
       time_slot: 0,
       party_size: this.props.partySize,
       date_slot: this.props.dateSlot,
-      user_id: this.props.currentUserId,
       restaurant_id: this.props.restaurantId
     };
 

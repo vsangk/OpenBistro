@@ -95,7 +95,6 @@ ${cityName}, ${state} ${zipCode}`;
             <h2>Make a reservation</h2>
             <ReservationSearch
               createReservation={this.props.createReservation}
-              currentUserId={this.props.currentUser.id}
               restaurantId={this.props.restaurantId}
               availableTimes={this.props.restaurantDetail.available_times}
               fetchTimes={this.props.fetchTimes}/>
@@ -119,7 +118,7 @@ ${cityName}, ${state} ${zipCode}`;
             {this.props.currentUser.id === -1 ? <div/> :
               <CreateReviewModalContainer
                 restaurantId={this.props.restaurantDetail.id}
-                currentUserId={this.props.currentUser.id}/>
+              />
             }
             <div className="review-container">
               {this.props.reviews.map(review => (

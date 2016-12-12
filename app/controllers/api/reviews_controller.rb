@@ -34,6 +34,7 @@ class Api::ReviewsController < ApplicationController
   end
 
   def review_params
+    params[:review][:user_id] = current_user.id
     params.require(:review).permit(:rating, :body, :user_id, :restaurant_id)
   end
 end

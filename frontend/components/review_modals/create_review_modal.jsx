@@ -38,7 +38,6 @@ class CreateReviewModal extends React.Component {
     this.props.createReview({
       body: this.state.body,
       rating: this.state.rating,
-      user_id: this.props.currentUserId,
       restaurant_id: this.props.restaurantId
     });
 

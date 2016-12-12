@@ -16,7 +16,6 @@ const Review = ({ review, deleteReview, currentUser }) => {
           <ul>
             <li><UpdateReviewModalContainer
               restaurantId={review.restaurant_id}
-              currentUserId={currentUser.id}
               review={review}
               />
             </li>

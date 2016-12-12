@@ -38,7 +38,6 @@ class UpdateReviewModal extends React.Component {
       id: this.props.review.id,
       body: this.state.body,
       rating: this.state.rating,
-      user_id: this.props.currentUserId,
       restaurant_id: this.props.restaurantId
     });
 

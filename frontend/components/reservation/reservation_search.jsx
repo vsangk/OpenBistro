@@ -71,7 +71,6 @@ class ReservationSearch extends React.Component {
         {this.state.hideBooker ? <div></div> :
           <ReservationBooker
             createReservation={this.props.createReservation}
-            currentUserId={this.props.currentUserId}
             restaurantId={this.props.restaurantId}
             dateSlot={this.state.date_slot}
             availableTimes={this.props.availableTimes}

@@ -5,7 +5,6 @@ import { createReview } from '../../actions/review_actions';
 const mapStateToProps = (state, ownProps) => {
   return ({
     restaurantId: ownProps.restaurantId,
-    currentUserId: ownProps.currentUserId
   });
 };
 
