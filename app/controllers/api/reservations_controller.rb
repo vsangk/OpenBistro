@@ -23,7 +23,7 @@ class Api::ReservationsController < ApplicationController
       end
       render json: { "available_times" => @available_times }
     else
-      @reservations = Reservation.where("user_id = ?", current_user.id)
+      @reservations = Reservation.where("user_id = ?", current_user.id).order("date_slot, time_slot")
       render :index
     end
   end
