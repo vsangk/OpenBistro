@@ -53,6 +53,16 @@ h2 {
 
 /* Header and Navbar*/
 
+.body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.body > div {
+  flex: 1;
+}
+
 .header {
   background: #2c3e50;
   color: #fff;
